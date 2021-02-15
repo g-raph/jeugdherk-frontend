@@ -1,15 +1,12 @@
-<ng-container *ngIf="page$ | async as page">
+<ng-container *ngIf="treatments$ | async as treatments">
     <div class="page-content page-content--fixed">
-      <h1>{{page.name}}</h1>
+      <h1>Behandelingen</h1>
       <div class="categories-menu">
-        <button mat-button routerLink="/behandelingen" routerLinkActive="/treatments">All</button>
-        <button mat-button *ngFor="let cat of categories$ | async"
-            [routerLink]="'/categories/' + cat.id"
-            [routerLinkActive]="'/categories/' + cat.id"
-        >{{cat.name}}</button>
+        <button mat-button routerLink="/behandelingen">All</button>
+        <button mat-button *ngFor="let cat of categories$ | async" [routerLink]="'/categories/' + cat.id">{{cat.name}}</button>
       </div>
       <div class="treatments card-container">
-        <mat-card class="card" *ngFor="let item of page.treatments" [routerLink]="'/behandelingen/' + item.id">
+        <mat-card class="card" *ngFor="let item of treatments" [routerLink]="'/behandelingen/' + item.id">
           <mat-card-header>
             <mat-card-title>{{item.title}}</mat-card-title>
             <mat-card-subtitle><span *ngFor="let cat of item.categories">{{ cat.name }}, </span></mat-card-subtitle>
@@ -24,4 +21,3 @@
       </div>
     </div>
   </ng-container>
-  

@@ -1,25 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from 'express';
 import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
 import { Category } from 'src/app/categories/category';
-import { Restaurant } from '../restaurant';
+import { Treatment } from '../treatment';
 
 @Component({
-  selector: 'app-restaurant-list',
-  templateUrl: './restaurant-list.component.html',
-  styleUrls: ['./restaurant-list.component.scss']
+  selector: 'app-treatment-list',
+  templateUrl: './treatment-list.component.html',
+  styleUrls: ['./treatment-list.component.scss']
 })
-export class RestaurantListComponent implements OnInit {
+export class TreatmentListComponent implements OnInit {
 
-  restaurants$: Observable<Restaurant[]>;
+  treatments$: Observable<Treatment[]>;
   categories$: Observable<Category[]>;
 
   constructor(private api: ApiService) {
   }
 
   ngOnInit(): void {
-    this.restaurants$ = this.api.getRestaurants();
+    this.treatments$ = this.api.getTreatments();
     this.categories$ = this.api.getCategories();
   }
 

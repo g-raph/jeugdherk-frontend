@@ -11,11 +11,11 @@ import { Page } from '../pages/page';
 })
 export class ToolbarComponent implements OnInit {
 
-  title = 'Angular CMS frontend';
+  title = 'Instituut Valkenborgh';
   menuItems = [
-    {name: 'About us', link: '/about-us'},
-    {name: 'Restaurants', link: '/restaurants'},
-    {name: 'Contact us', link: '/contact'},
+    {name: 'Tarieven', link: '/tarieven'},
+    {name: 'Behandelingen', link: '/behandelingen'},
+    {name: 'Contact', link: '/contact'},
   ];
 
   constructor() { }

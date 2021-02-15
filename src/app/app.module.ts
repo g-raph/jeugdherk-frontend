@@ -13,7 +13,6 @@ import {
 } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RestaurantListComponent } from './restaurants/restaurant-list/restaurant-list.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { PageComponent } from './pages/page/page.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
@@ -21,20 +20,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutpageComponent } from './pages/aboutpage/aboutpage.component';
 import { ContactpageComponent } from './pages/contactpage/contactpage.component';
-import { RestaurantDetailComponent } from './restaurants/restaurant-detail/restaurant-detail.component';
 import { CategoryComponent } from './categories/category/category.component';
+import { TreatmentDetailComponent } from './treatments/treatment-detail/treatment-detail.component';
+import { TreatmentListComponent } from './treatments/treatment-list/treatment-list.component';
+import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
+import { PricelistComponent } from './pages/pricelist/pricelist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RestaurantListComponent,
     ToolbarComponent,
     PageComponent,
     HomepageComponent,
     AboutpageComponent,
     ContactpageComponent,
-    RestaurantDetailComponent,
-    CategoryComponent
+    CategoryComponent,
+    TreatmentDetailComponent,
+    TreatmentListComponent,
+    PricelistComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -50,7 +53,8 @@ import { CategoryComponent } from './categories/category/category.component';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MarkdownToHtmlModule
   ],
   providers: [],
   bootstrap: [AppComponent]

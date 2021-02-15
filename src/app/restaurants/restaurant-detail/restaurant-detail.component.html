@@ -1,9 +1,0 @@
-<ng-container *ngIf="page$ | async as page">
-    <div class="page-header">
-        <img [src]="'http://localhost:1337' + page.image[0].url">
-    </div>
-    <div class="page-content page-content--fixed">
-        <h1>{{page.name}}</h1>
-        <p>{{page.description}}</p>
-    </div>
-</ng-container>

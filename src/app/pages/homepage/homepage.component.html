@@ -4,13 +4,13 @@
     </div>
     <div class="page-content page-content--fixed">
         <h1>{{homepage.Title}}</h1>
-        <p>{{homepage.body}}</p>
-        <h2>Some restaurants</h2>
-        <div class="restaurants restaurants-frontpage card-container" *ngIf="restaurants$ | async as restaurants">
-            <div class="card" *ngFor="let item of restaurants | slice:0:3" [routerLink]="'/restaurants/' + item.id">
-                <img class="card__image" [src]="'http://localhost:1337' + item.image[0].url">
+        <p [innerHTML]="homepage.body|MarkdownToHtml"></p>
+        <h2>Enkele behandelingen</h2>
+        <div class="treatments treatments-frontpage card-container" *ngIf="treatments$ | async as treatments">
+            <div class="card" *ngFor="let item of treatments | slice:0:3" [routerLink]="'/behandelingen/' + item.id">
+                <img class="card__image" [src]="'http://localhost:1337' + item.images[0].url">
                 <div class="card-body">
-                    <h3>{{item.name}}</h3>
+                    <h3>{{item.title}}</h3>
                     <p><span *ngFor="let cat of item.categories">{{ cat.name }}, </span></p>
                 </div>
             </div>

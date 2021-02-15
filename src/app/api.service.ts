@@ -14,6 +14,11 @@ export class ApiService {
     return this.http.get(url);
   }
 
+  getTreatments(): Observable<any> {
+    const url = `http://localhost:1337/treatments`;
+    return this.http.get(url);
+  }
+
   getCategories(): Observable<any> {
     const url = `http://localhost:1337/categories`;
     return this.http.get(url);
@@ -39,6 +44,11 @@ export class ApiService {
     return this.http.get(url);
   }
 
+  getTreatment(id: string): Observable<any> {
+    const url = `http://localhost:1337/treatments/${id}`;
+    return this.http.get(url);
+  }
+
   getHomePage(): Observable<any> {
     const url = `http://localhost:1337/homepage`;
     return this.http.get(url);
@@ -51,6 +61,11 @@ export class ApiService {
 
   getContactPage(): Observable<any> {
     const url = `http://localhost:1337/contact-page`;
+    return this.http.get(url);
+  }
+
+  getPriceList(): Observable<any> {
+    const url = `http://localhost:1337/pricelist`;
     return this.http.get(url);
   }
 }

@@ -1,10 +1,10 @@
-import { Restaurant } from '../restaurants/restaurant';
+import { Treatment } from '../treatments/treatment';
 
 export interface Category {
     created_at: string;
     name: string;
     published_at: string;
     updated_at: string;
-    restaurants: Restaurant[];
+    treatments: Treatment[];
     id: number;
 }

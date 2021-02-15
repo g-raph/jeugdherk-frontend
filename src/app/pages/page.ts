@@ -8,6 +8,12 @@ export interface Page {
     updated_at: string;
 }
 
+export interface PricelistPage {
+    id: number;
+    title: string;
+    description: string;
+}
+
 export interface PageImage {
     url: string;
 }
