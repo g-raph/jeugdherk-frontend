@@ -11,15 +11,16 @@ import { Treatment } from '../treatment';
 })
 export class TreatmentListComponent implements OnInit {
 
-  treatments$: Observable<Treatment[]>;
+  // treatments$: Observable<Treatment[]>;
   categories$: Observable<Category[]>;
 
   constructor(private api: ApiService) {
   }
 
   ngOnInit(): void {
-    this.treatments$ = this.api.getTreatments();
+    // this.treatments$ = this.api.getTreatments();
     this.categories$ = this.api.getCategories();
+    this.categories$.subscribe(console.log);
   }
 
 }

@@ -1,10 +1,10 @@
 <mat-toolbar color="secondary">
-    <button mat-icon-button routerLink="/">
+    <button mat-icon-button routerLink="/" routerLinkActive="active">
         <mat-icon class="logo">child_care</mat-icon>
     </button>
     <span>{{title}}</span>
     <span class="example-spacer"></span>
     <div class="menu">
-        <button mat-button *ngFor="let menuItem of menuItems" [routerLink]="menuItem.link" [routerLinkActive]="menuItem.link">{{menuItem.name}}</button>
+        <button mat-button *ngFor="let menuItem of menuItems" [routerLink]="menuItem.link" [routerLinkActive]="'mat-accent'">{{menuItem.name}}</button>
     </div>
 </mat-toolbar>

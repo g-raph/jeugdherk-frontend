@@ -25,6 +25,9 @@ import { TreatmentDetailComponent } from './treatments/treatment-detail/treatmen
 import { TreatmentListComponent } from './treatments/treatment-list/treatment-list.component';
 import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 import { PricelistComponent } from './pages/pricelist/pricelist.component';
+import { FooterComponent } from './footer/footer.component';
+import { RouterModule } from '@angular/router';
+import { TreatmentTeaserComponent } from './treatments/treatment-teaser/treatment-teaser.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import { PricelistComponent } from './pages/pricelist/pricelist.component';
     CategoryComponent,
     TreatmentDetailComponent,
     TreatmentListComponent,
-    PricelistComponent
+    PricelistComponent,
+    FooterComponent,
+    TreatmentTeaserComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

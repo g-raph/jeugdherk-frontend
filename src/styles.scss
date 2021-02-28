@@ -9,7 +9,34 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+h1, h2, h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: normal;
+}
+
+.logo {
+  svg {
+    path {
+      &.valkenborgh {
+        fill: #231f20;
+      }
+      &.instituut {
+        fill: #cb9700;
+      }
+    }
+  }
+}
+
 .page-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  .logo {
+    position: absolute;
+    left: 10vw;
+    z-index: 1;
+    width: 40vw;
+  }
   img {
     width: 100%;
     height: 35rem;
@@ -24,33 +51,24 @@ body {
   }
 }
 
-//restaurants
-.restaurants {
+
+//treatments
+.treatments {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  margin-top: 2rem;
   .card {
-      max-width: 27.5rem;
-      margin-bottom: 1rem;
-      &__image {
-          height: 15rem;
-          object-fit: cover;
-      }
-  }
-  &-frontpage {
-    margin-top: 2rem;
-    .card {
-      border: 1px solid #cacaca;
-      border-radius: .25rem;
-      max-width: 28%;
-      margin-bottom: 0;
-      padding: 1rem;
-      cursor: pointer;
-      &__image {
-          width: 100%;
-          height: 10rem;
-          object-fit: cover;
-      }
+    border: 1px solid #cacaca;
+    border-radius: .25rem;
+    max-width: 28%;
+    margin-bottom: 0;
+    padding: 1rem;
+    cursor: pointer;
+    &__image {
+      width: calc(100% + 2rem);
+      height: 10rem;
+      object-fit: cover;
     }
   }
 }

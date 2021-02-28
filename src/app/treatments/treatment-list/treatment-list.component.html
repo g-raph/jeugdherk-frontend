@@ -1,23 +1,33 @@
-<ng-container *ngIf="treatments$ | async as treatments">
-    <div class="page-content page-content--fixed">
-      <h1>Behandelingen</h1>
-      <div class="categories-menu">
-        <button mat-button routerLink="/behandelingen">All</button>
-        <button mat-button *ngFor="let cat of categories$ | async" [routerLink]="'/categories/' + cat.id">{{cat.name}}</button>
-      </div>
-      <div class="treatments card-container">
-        <mat-card class="card" *ngFor="let item of treatments" [routerLink]="'/behandelingen/' + item.id">
-          <mat-card-header>
-            <mat-card-title>{{item.title}}</mat-card-title>
-            <mat-card-subtitle><span *ngFor="let cat of item.categories">{{ cat.name }}, </span></mat-card-subtitle>
-          </mat-card-header>
-          <img class="card__image" mat-card-image [src]="'http://localhost:1337' + item.images[0].url">
-          <mat-card-content>
-            <p>
-              {{item.description}}
-            </p>
-          </mat-card-content>
-        </mat-card>
+<ng-container *ngIf="categories$ | async as categories">
+  <div class="page-content page-content--fixed">
+    <h1>Behandelingen</h1>
+    <!-- <div class="categories-menu">
+      <button mat-button routerLink="/behandelingen">All</button>
+      <button mat-button *ngFor="let cat of categories$ | async" [routerLink]="'/categories/' + cat.id">{{cat.name}}</button>
+    </div>
+    <div class="treatments card-container">
+      <mat-card class="card" *ngFor="let item of treatments" [routerLink]="'/behandelingen/' + item.id">
+        <mat-card-header>
+          <mat-card-title>{{item.title}}</mat-card-title>
+        </mat-card-header>
+        <img class="card__image" mat-card-image [src]="'http://localhost:1337' + item.images[0].url">
+      </mat-card>
+    </div> -->
+    <div class="treatment-list-per-category">
+      <div class="treatment-list-per-category__category" *ngFor="let cat of categories" [routerLink]="'/categories/' + cat.id">
+        <div class="treatment-list-per-category__category__header">
+          <img class="treatment-list-per-category__category__header__image" [src]="'http://localhost:1337' + cat.image.url">
+          <div class="treatment-list-per-category__category__header__name">{{cat.name}}</div>
+        </div>
+        <div class="treatment-list-per-category__category__body">
+          <!-- oplijsting behandelingen -->
+          <ul>
+            <li *ngFor="let treatment of cat.treatments">
+              <a [routerLink]="'/behandelingen/' + treatment.title">{{treatment.title}}</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </ng-container>
+  </div>
+</ng-container>

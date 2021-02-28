@@ -13,8 +13,9 @@ export class ToolbarComponent implements OnInit {
 
   title = 'Instituut Valkenborgh';
   menuItems = [
-    {name: 'Tarieven', link: '/tarieven'},
+    {name: 'Welkom', link: '/'},
     {name: 'Behandelingen', link: '/behandelingen'},
+    {name: 'Tarieven', link: '/tarieven'},
     {name: 'Contact', link: '/contact'},
   ];
 

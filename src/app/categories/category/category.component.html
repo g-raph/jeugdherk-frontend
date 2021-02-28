@@ -1,27 +1,17 @@
 <ng-container *ngIf="page$ | async as page">
-    <div class="page-content page-content--fixed">
-      <h1>{{page.name}}</h1>
-      <div class="categories-menu">
-        <button mat-button routerLink="/behandelingen" routerLinkActive="/treatments">All</button>
-        <button mat-button *ngFor="let cat of categories$ | async"
-            [routerLink]="'/categories/' + cat.id"
-            [routerLinkActive]="'/categories/' + cat.id"
-        >{{cat.name}}</button>
-      </div>
-      <div class="treatments card-container">
-        <mat-card class="card" *ngFor="let item of page.treatments" [routerLink]="'/behandelingen/' + item.id">
-          <mat-card-header>
-            <mat-card-title>{{item.title}}</mat-card-title>
-            <mat-card-subtitle><span *ngFor="let cat of item.categories">{{ cat.name }}, </span></mat-card-subtitle>
-          </mat-card-header>
-          <img class="card__image" mat-card-image [src]="'http://localhost:1337' + item.images[0].url">
-          <mat-card-content>
-            <p>
-              {{item.description}}
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div>
+  <div class="page-header">
+      <img [src]="'http://localhost:1337' + page.image.url">
+  </div>
+  <div class="page-content page-content--fixed">
+    <h1>{{page.name}}</h1>
+    <div class="treatments card-container">
+      <mat-card class="card" *ngFor="let item of page.treatments" [routerLink]="'/behandelingen/' + item.id">
+        <mat-card-header>
+          <mat-card-title>{{item.title}}</mat-card-title>
+        </mat-card-header>
+        <img class="card__image" mat-card-image [src]="'http://localhost:1337' + item.images[0].url">
+      </mat-card>
     </div>
-  </ng-container>
+  </div>
+</ng-container>
   

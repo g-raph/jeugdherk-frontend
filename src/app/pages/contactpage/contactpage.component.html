@@ -4,6 +4,6 @@
     </div>
     <div class="page-content page-content--fixed">
         <h1>{{contactpage.title}}</h1>
-        <p>{{contactpage.body}}</p>
+        <p [innerHTML]="contactpage.body | MarkdownToHtml"></p>
     </div>
 </ng-container>
