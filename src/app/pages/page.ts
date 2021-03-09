@@ -6,6 +6,7 @@ export interface Page {
     id: number;
     published_at: string;
     updated_at: string;
+    open?: string;
 }
 
 export interface PricelistPage {

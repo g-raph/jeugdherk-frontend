@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
+import { environment } from 'src/environments/environment';
 import { PricelistPage } from '../page';
 
 @Component({
@@ -16,6 +17,10 @@ export class PricelistComponent implements OnInit {
 
   ngOnInit() {
     this.pricelistpage$ = this.api.getPriceList();
+  }
+
+  imageUrl(path: string) {
+    return environment.apiUrl + path;
   }
 
 }

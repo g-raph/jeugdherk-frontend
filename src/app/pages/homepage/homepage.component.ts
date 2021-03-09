@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
 import { Category } from 'src/app/categories/category';
 import { Treatment } from 'src/app/treatments/treatment';
+import { environment } from 'src/environments/environment';
 import { Homepage } from './homepage';
 
 @Component({
@@ -20,8 +21,11 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
     this.homepage$ = this.api.getHomePage();
-    this.treatments$ = this.api.getTreatments();
     this.categories$ = this.api.getCategories();
+  }
+
+  imageUrl(path: string) {
+    return environment.apiUrl + path;
   }
 
 }

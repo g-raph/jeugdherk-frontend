@@ -135,7 +135,7 @@
           />
       </svg>
     </div>
-    <img [src]="'http://localhost:1337' + homepage.images[0].url" />
+    <img class="homepage-banner" [src]="imageUrl(homepage.images[0].url)" />
   </div>
   <div class="page-content page-content--fixed">
     <h1>{{ homepage.Title }}</h1>

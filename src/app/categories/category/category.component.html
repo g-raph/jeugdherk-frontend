@@ -1,6 +1,6 @@
 <ng-container *ngIf="page$ | async as page">
   <div class="page-header">
-      <img [src]="'http://localhost:1337' + page.image.url">
+      <img [src]="catImageUrl(page.image.url)">
   </div>
   <div class="page-content page-content--fixed">
     <h1>{{page.name}}</h1>
@@ -9,7 +9,7 @@
         <mat-card-header>
           <mat-card-title>{{item.title}}</mat-card-title>
         </mat-card-header>
-        <img class="card__image" mat-card-image [src]="'http://localhost:1337' + item.images[0].url">
+        <img class="card__image" mat-card-image [src]="catImageUrl(item.images[0].url)">
       </mat-card>
     </div>
   </div>

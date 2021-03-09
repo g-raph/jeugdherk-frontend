@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
+import { environment } from 'src/environments/environment';
 import { Category } from '../category';
 
 @Component({
@@ -21,6 +22,10 @@ export class CategoryComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.page$ = this.api.getCategory(params.id);
     });
+  }
+
+  catImageUrl(path: string) {
+    return environment.apiUrl + path;
   }
 
 }

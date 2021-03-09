@@ -1,6 +1,6 @@
 <ng-container *ngIf="pricelistpage$ | async as pricelistpage">
     <div class="page-header">
-        <img [src]="'http://localhost:1337' + pricelistpage.images[0].url">
+        <img [src]="imageUrl(pricelistpage.images[0].url)">
     </div>
     <div class="page-content page-content--fixed">
         <h1>{{pricelistpage.title}}</h1>

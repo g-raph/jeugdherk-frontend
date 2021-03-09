@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
 import { Category } from 'src/app/categories/category';
+import { environment } from 'src/environments/environment';
 import { Treatment } from '../treatment';
 
 @Component({
@@ -13,6 +14,7 @@ export class TreatmentListComponent implements OnInit {
 
   // treatments$: Observable<Treatment[]>;
   categories$: Observable<Category[]>;
+  destroy$ = new Subject();
 
   constructor(private api: ApiService) {
   }
@@ -21,6 +23,10 @@ export class TreatmentListComponent implements OnInit {
     // this.treatments$ = this.api.getTreatments();
     this.categories$ = this.api.getCategories();
     this.categories$.subscribe(console.log);
+  }
+
+  catImageUrl(path: string) {
+    return environment.apiUrl + path;
   }
 
 }

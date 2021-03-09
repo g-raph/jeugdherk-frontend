@@ -1,6 +1,6 @@
 <ng-container *ngIf="aboutpage$ | async as aboutpage">
     <div class="page-header">
-        <img [src]="'http://localhost:1337' + aboutpage.images[0].url">
+        <img [src]="imageUrl(aboutpage.images[0].url)">
     </div>
     <div class="page-content page-content--fixed">
         <h1>{{aboutpage.title}}</h1>

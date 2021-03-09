@@ -68,4 +68,16 @@ export class ApiService {
     const url = `http://localhost:1337/pricelist`;
     return this.http.get(url);
   }
+
+  addMessage(message: Message): Observable<any> {
+    const url = `http://localhost:1337/messages`;
+    return this.http.post<Message>(url, message);
+  }
+}
+
+export interface Message {
+  message_subject: string;
+  message_body: string;
+  sender_email: string;
+  sender_name: string;
 }

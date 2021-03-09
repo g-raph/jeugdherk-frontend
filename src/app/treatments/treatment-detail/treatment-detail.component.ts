@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
+import { environment } from 'src/environments/environment';
 import { Treatment } from '../treatment';
 
 @Component({
@@ -17,6 +18,10 @@ export class TreatmentDetailComponent implements OnInit {
 
   ngOnInit() {
     this.page$ = this.api.getTreatment(this.route.snapshot.params.id);
+  }
+
+  treatmentDetailImgUrl(path: string) {
+    return environment.apiUrl + path;
   }
 
 }
