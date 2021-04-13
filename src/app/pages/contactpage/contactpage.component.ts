@@ -13,7 +13,7 @@ import { Page } from '../page';
 export class ContactpageComponent implements OnInit, OnDestroy {
 
   contactpage$: Observable<Page>;
-  destroy$ = new Subject;
+  destroy$ = new Subject();
 
   constructor(private api: ApiService) { }
 
@@ -29,8 +29,8 @@ export class ContactpageComponent implements OnInit, OnDestroy {
     const testMessage: Message = {
       sender_name: 'Gunter Gielen',
       sender_email: 'gunter.gielen@telenet.be',
-      message_body: 'test body hier',
-      message_subject: 'Onderwerp van message'
+      message_body: 'blabla',
+      message_subject: 'blabla onderwerp'
     };
     this.api.addMessage(testMessage).pipe(
       takeUntil(this.destroy$)

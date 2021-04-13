@@ -1,0 +1,20 @@
+$sidebar-width: 15rem;
+
+.app-container {
+    .app-sidebar {
+        width: $sidebar-width;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+    }
+    .app-content {
+        background-color: #fbfbfb;
+        height: 100vh;
+        width: calc(100% - $sidebar-width);
+        margin-left: $sidebar-width;
+    }
+}

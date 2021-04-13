@@ -10,12 +10,13 @@ import { TreatmentListComponent } from './treatments/treatment-list/treatment-li
 
 
 const routes: Routes = [
-  {path: '', component: HomepageComponent},
+  {path: 'welkom', component: HomepageComponent},
   {path: 'tarieven', component: PricelistComponent},
   {path: 'behandelingen', component: TreatmentListComponent},
   {path: 'behandelingen/:id', component: TreatmentDetailComponent},
   {path: 'categories/:id', component: CategoryComponent},
   {path: 'contact', component: ContactpageComponent},
+  {path: '**', redirectTo: 'welkom'}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

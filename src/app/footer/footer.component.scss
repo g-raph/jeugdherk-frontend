@@ -1,10 +1,19 @@
+$gold: #cb9700;
+
 .page-footer {
-    background: #f5F5F5;
-    padding: 2rem;
-    &__inner {
-      max-width: 60rem;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
+  padding: 2rem;
+  .address {
+    color: #666;
+    font-size: .75rem;
+  }
+  .email {
+    font-size: .75rem;
+  }
+  .socialmedia {
+    color: #333;
+    &:hover {
+      color: $gold;
+      background: none;
     }
   }
+}

@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+$gold: #cb9700;
 
 html,
 body {
@@ -15,7 +16,16 @@ h1, h2, h3 {
 }
 
 h3 {
-  color: #cb9700;
+  color: $gold;
+}
+
+a {
+  color: $gold;
+  text-decoration: none;
+  &:hover, &.active {
+    color: #fff;
+    background-color: $gold;
+  }
 }
 
 .logo {
@@ -37,21 +47,21 @@ h3 {
   align-items: center;
   .logo {
     position: absolute;
-    left: 10vw;
+    left: 5rem;
     z-index: 1;
-    width: 40vw;
+    width: 30vw;
   }
   img {
     width: 100%;
     height: 20rem;
     object-fit: cover;
     &.homepage-banner {
-      height: 40rem;
+      height: 30rem;
     }
   }
 }
 .page-content {
-  padding: 2rem;
+  padding: 3rem 5rem;
   &--fixed {
     max-width: 60rem;
     margin: 0 auto;
