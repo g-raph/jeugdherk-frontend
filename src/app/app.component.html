@@ -1,9 +1,11 @@
 <div class="app-container">
-  <div class="app-sidebar">
+  <div class="app-sidebar" [class.open]="showMobileSidebar$ | async">
     <app-toolbar></app-toolbar>
     <app-footer></app-footer>
   </div>
   <div class="app-content">
+    <button *ngIf="!(showMobileSidebar$ | async)" class="btn sidebar-button" (click)="openMobileSidebar()">open</button>
+    <button *ngIf="showMobileSidebar$ | async" class="btn sidebar-button" (click)="closeMobileSidebar()">close</button>
     <router-outlet></router-outlet>
   </div>
 </div>

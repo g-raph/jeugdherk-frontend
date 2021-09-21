@@ -20,7 +20,7 @@ export class CategoryComponent implements OnInit {
   ngOnInit() {
     this.categories$ = this.api.getCategories();
     this.route.params.subscribe(params => {
-      this.page$ = this.api.getCategory(params.id);
+      this.page$ = this.api.getCategory(params.slug);
     });
   }
 

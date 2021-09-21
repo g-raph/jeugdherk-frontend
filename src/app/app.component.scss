@@ -10,11 +10,39 @@ $sidebar-width: 15rem;
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;
+        opacity: 1;
+        transition: .25s all ease;
+        background: #fff;
+        box-shadow: 0 0 20px rgb(0 0 0 / 30%);
+        z-index: 2;
+        @media screen and (max-width: 600px) {
+          width: 0;
+          opacity: 0;
+        }
+        &.open {
+          width: $sidebar-width;
+          opacity: 1;
+        }
     }
     .app-content {
-        background-color: #fbfbfb;
-        height: 100vh;
+        background-color: #faf6ef;//#f7f7f7;
+        min-height: 100vh;
         width: calc(100% - $sidebar-width);
         margin-left: $sidebar-width;
+        transition: .25s all ease;
+        @media screen and (max-width: 600px) {
+          width: 100%;
+          margin-left: 0;
+        }
+        .sidebar-button {
+          position: absolute;
+          right: 2rem;
+          top: 2rem;
+          z-index: 99;
+          display: none;
+          @media screen and (max-width: 600px) {
+            display: block;
+          }
+        }
     }
 }

@@ -2,7 +2,7 @@
   <div class="page-content page-content--fixed">
     <h1>Behandelingen</h1>
     <div class="treatment-list-per-category">
-      <div class="treatment-list-per-category__category" *ngFor="let cat of categories" [routerLink]="'/categories/' + cat.id">
+      <div class="treatment-list-per-category__category" *ngFor="let cat of categories" [routerLink]="'/categories/' + cat.slug">
         <div class="treatment-list-per-category__category__header">
           <img class="treatment-list-per-category__category__header__image" [src]="catImageUrl(cat.image.url)">
           <h3 class="treatment-list-per-category__category__header__name">{{cat.name}}</h3>
@@ -11,7 +11,7 @@
           <!-- oplijsting behandelingen -->
           <ul>
             <li *ngFor="let treatment of cat.treatments">
-              <a [routerLink]="'/behandelingen/' + treatment.id">{{treatment.title}}</a>
+              <a [routerLink]="'/behandelingen/' + treatment.slug">{{treatment.title}}</a>
             </li>
           </ul>
         </div>

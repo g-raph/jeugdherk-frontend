@@ -17,7 +17,8 @@ export class TreatmentDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private api: ApiService) { }
 
   ngOnInit() {
-    this.page$ = this.api.getTreatment(this.route.snapshot.params.id);
+    this.page$ = this.api.getTreatment(this.route.snapshot.params.slug);
+    this.page$.subscribe(console.log);
   }
 
   treatmentDetailImgUrl(path: string) {

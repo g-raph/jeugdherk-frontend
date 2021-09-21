@@ -22,9 +22,14 @@ export class HomepageComponent implements OnInit {
   ngOnInit() {
     this.homepage$ = this.api.getHomePage();
     this.categories$ = this.api.getCategories();
+    this.categories$.subscribe(console.log);
   }
 
   imageUrl(path: string) {
+    return environment.apiUrl + path;
+  }
+
+  catImageUrl(path: string) {
     return environment.apiUrl + path;
   }
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { title } from 'process';
 import { Observable, Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ApiService } from 'src/app/api.service';
 import { Category } from 'src/app/categories/category';
 import { environment } from 'src/environments/environment';

@@ -3,7 +3,15 @@
         <img [src]="treatmentDetailImgUrl(page.images[0].url)">
     </div>
     <div class="page-content page-content--fixed">
-        <h1>{{page.title}}</h1>
+        <div class="treatment__detail__title">
+          <h1>{{page.title}}</h1>
+          <div class="treatment__detail__title__meta">
+            <div class="treatment__detail__title__meta__categories">
+              <a *ngFor="let item of page.categories" [routerLink]="'/categories/' + item.slug" class="treatment__detail__title__meta__categories__item">{{item.name}}</a>
+            </div>
+            <div *ngIf="page.price" class="treatment__price">€ {{page.price}}</div>
+          </div>
+        </div>
         <p [innerHTML]="page.description|MarkdownToHtml">{{page.description}}</p>
     </div>
 </ng-container>

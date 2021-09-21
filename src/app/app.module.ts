@@ -26,7 +26,6 @@ import { TreatmentListComponent } from './treatments/treatment-list/treatment-li
 import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 import { PricelistComponent } from './pages/pricelist/pricelist.component';
 import { FooterComponent } from './footer/footer.component';
-import { RouterModule } from '@angular/router';
 import { TreatmentTeaserComponent } from './treatments/treatment-teaser/treatment-teaser.component';
 
 @NgModule({

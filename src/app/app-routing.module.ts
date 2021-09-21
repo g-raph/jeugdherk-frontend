@@ -13,8 +13,8 @@ const routes: Routes = [
   {path: 'welkom', component: HomepageComponent},
   {path: 'tarieven', component: PricelistComponent},
   {path: 'behandelingen', component: TreatmentListComponent},
-  {path: 'behandelingen/:id', component: TreatmentDetailComponent},
-  {path: 'categories/:id', component: CategoryComponent},
+  {path: 'behandelingen/:slug', component: TreatmentDetailComponent},
+  {path: 'categories/:slug', component: CategoryComponent},
   {path: 'contact', component: ContactpageComponent},
   {path: '**', redirectTo: 'welkom'}
 ];

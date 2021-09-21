@@ -1,7 +1,13 @@
-$gold: #cb9700;
+$gold: #231f20;
 
 .example-spacer {
   flex: 1 1 auto;
+}
+
+.logo {
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 .menu {
@@ -27,6 +33,8 @@ $gold: #cb9700;
           color: #333;
           border: 1px solid $gold;
           background-color: transparent;
+          border-radius: 0.5rem;
+          border-bottom-left-radius: 0;
         }
       }
       > ul {

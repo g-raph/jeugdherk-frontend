@@ -9,5 +9,6 @@ export interface Category {
     };
     updated_at: string;
     treatments: Treatment[];
+    slug?: string;
     id: number;
 }

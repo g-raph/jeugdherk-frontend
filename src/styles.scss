@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 $gold: #cb9700;
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
 html,
 body {
@@ -7,16 +9,25 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1, h2, h3 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Bree Serif', serif;
   font-weight: normal;
+}
+
+h1 {
+  line-height: 1;
 }
 
 h3 {
   color: $gold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -35,7 +46,7 @@ a {
         fill: #231f20;
       }
       &.instituut {
-        fill: #cb9700;
+        fill: #231f20;
       }
     }
   }
@@ -50,6 +61,7 @@ a {
     left: 5rem;
     z-index: 1;
     width: 30vw;
+    min-width: 16rem;
   }
   img {
     width: 100%;
@@ -62,6 +74,9 @@ a {
 }
 .page-content {
   padding: 3rem 5rem;
+  @media screen and (max-width: 600px) {
+    padding: 1rem 1.5rem;
+  }
   &--fixed {
     max-width: 60rem;
     margin: 0 auto;

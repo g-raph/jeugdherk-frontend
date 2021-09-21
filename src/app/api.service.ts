@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
+import { map } from 'rxjs/operators';
+import { Category } from './categories/category';
+import { Treatment } from './treatments/treatment';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,8 +26,8 @@ export class ApiService {
     return this.http.get(url);
   }
 
-  getCategory(id: string): Observable<any> {
-    const url = `http://localhost:1337/categories/${id}`;
+  getCategory(slug: string): Observable<any> {
+    const url = `http://localhost:1337/categories/${slug}`;
     return this.http.get(url);
   }
 
@@ -44,8 +46,8 @@ export class ApiService {
     return this.http.get(url);
   }
 
-  getTreatment(id: string): Observable<any> {
-    const url = `http://localhost:1337/treatments/${id}`;
+  getTreatment(slug: string): Observable<any> {
+    const url = `http://localhost:1337/treatments/${slug}`;
     return this.http.get(url);
   }
 

@@ -29,8 +29,8 @@ export class ContactpageComponent implements OnInit, OnDestroy {
     const testMessage: Message = {
       sender_name: 'Gunter Gielen',
       sender_email: 'gunter.gielen@telenet.be',
-      message_body: 'blabla',
-      message_subject: 'blabla onderwerp'
+      message_body: 'bericht via frontend',
+      message_subject: 'bericht via frontend'
     };
     this.api.addMessage(testMessage).pipe(
       takeUntil(this.destroy$)

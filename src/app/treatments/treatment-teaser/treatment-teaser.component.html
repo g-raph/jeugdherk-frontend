@@ -1,1 +1,16 @@
-<p>treatment-teaser works!</p>
+<div class="teaser">
+
+  <img
+    class="main-image"
+    [src]="'http://localhost:1337' + item.image.url"
+    [routerLink]="'/categories/' + item.slug"
+  />
+  <div class="body">
+    <h2 [routerLink]="'/categories/' + item.slug">{{ item.name }}</h2>
+    <ul>
+      <li *ngFor="let treatment of item.treatments">
+        <a [routerLink]="'/behandelingen/' + treatment.slug">{{treatment.title}}</a>
+      </li>
+    </ul>
+  </div>
+</div>

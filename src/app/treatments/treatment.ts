@@ -10,6 +10,7 @@ export interface Treatment {
 
 export interface TreatmentCategory {
     name: string;
+    slug: string;
 }
 
 export interface TreatmentImage {
