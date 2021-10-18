@@ -30,6 +30,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { EventTeaserComponent } from './events/event-teaser/event-teaser.component';
+import { TeamDetailComponent } from './teams/team-detail/team-detail.component';
+import { TeamListComponent } from './teams/team-list/team-list.component';
+import { TeamTeaserComponent } from './teams/team-teaser/team-teaser.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { EventTeaserComponent } from './events/event-teaser/event-teaser.compone
     ArticleTeaserComponent,
     EventDetailComponent,
     EventListComponent,
-    EventTeaserComponent
+    EventTeaserComponent,
+    TeamDetailComponent,
+    TeamListComponent,
+    TeamTeaserComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

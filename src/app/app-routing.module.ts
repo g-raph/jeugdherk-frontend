@@ -7,12 +7,16 @@ import { EventDetailComponent } from './events/event-detail/event-detail.compone
 import { EventListComponent } from './events/event-list/event-list.component';
 import { ContactpageComponent } from './pages/contactpage/contactpage.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { TeamDetailComponent } from './teams/team-detail/team-detail.component';
+import { TeamListComponent } from './teams/team-list/team-list.component';
 
 
 const routes: Routes = [
   {path: 'welkom', component: HomepageComponent},
   {path: 'nieuws', component: ArticleListComponent},
   {path: 'nieuws/:slug', component: ArticleDetailComponent},
+  {path: 'ploegen', component: TeamListComponent},
+  {path: 'ploegen/:slug', component: TeamDetailComponent},
   {path: 'evenementen', component: EventListComponent},
   {path: 'evenementen/:slug', component: EventDetailComponent},
   {path: 'categorie/:slug', component: CategoryComponent},

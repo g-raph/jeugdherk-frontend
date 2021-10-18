@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,62 +10,72 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getArticles(): Observable<any> {
-    const url = `http://localhost:1337/articles`;
+    const url = `${environment.apiUrl}/articles`;
     return this.http.get(url);
   }
 
   getTimeslots(): Observable<any> {
-    const url = `http://localhost:1337/timeslots`;
+    const url = `${environment.apiUrl}/timeslots`;
     return this.http.get(url);
   }
 
   getCategories(): Observable<any> {
-    const url = `http://localhost:1337/categories`;
+    const url = `${environment.apiUrl}/categories`;
+    return this.http.get(url);
+  }
+
+  getTeams(): Observable<any> {
+    const url = `${environment.apiUrl}/teams`;
     return this.http.get(url);
   }
 
   getCategory(slug: string): Observable<any> {
-    const url = `http://localhost:1337/categories/${slug}`;
+    const url = `${environment.apiUrl}/categories/${slug}`;
     return this.http.get(url);
   }
 
   getPages(): Observable<any> {
-    const url = `http://localhost:1337/pages`;
+    const url = `${environment.apiUrl}/pages`;
     return this.http.get(url);
   }
 
   getPage(id: string): Observable<any> {
-    const url = `http://localhost:1337/pages/${id}`;
+    const url = `${environment.apiUrl}/pages/${id}`;
     return this.http.get(url);
   }
 
   getArticle(slug: string): Observable<any> {
-    const url = `http://localhost:1337/articles/${slug}`;
+    const url = `${environment.apiUrl}/articles/${slug}`;
     return this.http.get(url);
   }
 
   getTimeslot(slug: string): Observable<any> {
-    const url = `http://localhost:1337/timeslots/${slug}`;
+    const url = `${environment.apiUrl}/timeslots/${slug}`;
+    return this.http.get(url);
+  }
+
+  getTeam(slug: string): Observable<any> {
+    const url = `${environment.apiUrl}/teams/${slug}`;
     return this.http.get(url);
   }
 
   getHomePage(): Observable<any> {
-    const url = `http://localhost:1337/homepage`;
+    const url = `${environment.apiUrl}/homepage`;
     return this.http.get(url);
   }
 
   getAboutPage(): Observable<any> {
-    const url = `http://localhost:1337/about-page`;
+    const url = `${environment.apiUrl}/about-page`;
     return this.http.get(url);
   }
 
   getContactPage(): Observable<any> {
-    const url = `http://localhost:1337/contact-page`;
+    const url = `${environment.apiUrl}/contact-page`;
     return this.http.get(url);
   }
 
   addMessage(message: Message): Observable<any> {
-    const url = `http://localhost:1337/messages`;
+    const url = `${environment.apiUrl}/messages`;
     return this.http.post<Message>(url, message);
   }
 }

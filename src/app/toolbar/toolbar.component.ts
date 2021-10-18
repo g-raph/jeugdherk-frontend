@@ -12,6 +12,7 @@ export class ToolbarComponent implements OnInit {
     {name: 'Welkom', link: '/welkom'},
     {name: 'Nieuws', link: '/nieuws'},
     {name: 'Evenementen', link: '/evenementen'},
+    {name: 'Ploegen', link: '/ploegen'},
     {name: 'Contact', link: '/contact'},
   ];
 
