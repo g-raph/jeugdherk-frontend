@@ -1,9 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Category } from './categories/category';
-import { Treatment } from './treatments/treatment';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,13 +8,13 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getRestaurants(): Observable<any> {
-    const url = `http://localhost:1337/restaurants`;
+  getArticles(): Observable<any> {
+    const url = `http://localhost:1337/articles`;
     return this.http.get(url);
   }
 
-  getTreatments(): Observable<any> {
-    const url = `http://localhost:1337/treatments`;
+  getTimeslots(): Observable<any> {
+    const url = `http://localhost:1337/timeslots`;
     return this.http.get(url);
   }
 
@@ -41,13 +38,13 @@ export class ApiService {
     return this.http.get(url);
   }
 
-  getRestaurant(id: string): Observable<any> {
-    const url = `http://localhost:1337/restaurants/${id}`;
+  getArticle(slug: string): Observable<any> {
+    const url = `http://localhost:1337/articles/${slug}`;
     return this.http.get(url);
   }
 
-  getTreatment(slug: string): Observable<any> {
-    const url = `http://localhost:1337/treatments/${slug}`;
+  getTimeslot(slug: string): Observable<any> {
+    const url = `http://localhost:1337/timeslots/${slug}`;
     return this.http.get(url);
   }
 
@@ -63,11 +60,6 @@ export class ApiService {
 
   getContactPage(): Observable<any> {
     const url = `http://localhost:1337/contact-page`;
-    return this.http.get(url);
-  }
-
-  getPriceList(): Observable<any> {
-    const url = `http://localhost:1337/pricelist`;
     return this.http.get(url);
   }
 

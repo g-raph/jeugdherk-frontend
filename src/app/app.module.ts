@@ -8,6 +8,7 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
+  MatNativeDateModule,
   MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
@@ -18,15 +19,17 @@ import { PageComponent } from './pages/page/page.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AboutpageComponent } from './pages/aboutpage/aboutpage.component';
 import { ContactpageComponent } from './pages/contactpage/contactpage.component';
 import { CategoryComponent } from './categories/category/category.component';
-import { TreatmentDetailComponent } from './treatments/treatment-detail/treatment-detail.component';
-import { TreatmentListComponent } from './treatments/treatment-list/treatment-list.component';
 import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
-import { PricelistComponent } from './pages/pricelist/pricelist.component';
 import { FooterComponent } from './footer/footer.component';
-import { TreatmentTeaserComponent } from './treatments/treatment-teaser/treatment-teaser.component';
+import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
+import { ArticleListComponent } from './articles/article-list/article-list.component';
+import { ArticleTeaserComponent } from './articles/article-teaser/article-teaser.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { EventDetailComponent } from './events/event-detail/event-detail.component';
+import { EventListComponent } from './events/event-list/event-list.component';
+import { EventTeaserComponent } from './events/event-teaser/event-teaser.component';
 
 @NgModule({
   declarations: [
@@ -34,14 +37,15 @@ import { TreatmentTeaserComponent } from './treatments/treatment-teaser/treatmen
     ToolbarComponent,
     PageComponent,
     HomepageComponent,
-    AboutpageComponent,
     ContactpageComponent,
     CategoryComponent,
-    TreatmentDetailComponent,
-    TreatmentListComponent,
-    PricelistComponent,
     FooterComponent,
-    TreatmentTeaserComponent
+    ArticleDetailComponent,
+    ArticleListComponent,
+    ArticleTeaserComponent,
+    EventDetailComponent,
+    EventListComponent,
+    EventTeaserComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -58,6 +62,8 @@ import { TreatmentTeaserComponent } from './treatments/treatment-teaser/treatmen
     MatButtonModule,
     MatCardModule,
     MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MarkdownToHtmlModule
   ],
   providers: [],

@@ -83,28 +83,14 @@ a {
   }
 }
 
-
-//treatments
-.treatments {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  margin-top: 2rem;
-  .card {
-    border: 1px solid #cacaca;
-    border-radius: .25rem;
-    max-width: 28%;
-    margin-bottom: 0;
-    padding: 1rem;
-    cursor: pointer;
-    &__image {
-      width: calc(100% + 2rem);
-      height: 10rem;
-      object-fit: cover;
-    }
-  }
-}
-
 .categories-menu {
   margin-bottom: 2rem;
+}
+
+.mat-calendar-body-today {
+  border-color: red;
+}
+
+.mat-calendar-body-active {
+  background-color: orangered;
 }

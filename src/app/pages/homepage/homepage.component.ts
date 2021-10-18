@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
+import { Article } from 'src/app/articles/article';
 import { Category } from 'src/app/categories/category';
-import { Treatment } from 'src/app/treatments/treatment';
 import { environment } from 'src/environments/environment';
 import { Homepage } from './homepage';
 
@@ -14,15 +14,16 @@ import { Homepage } from './homepage';
 export class HomepageComponent implements OnInit {
 
   homepage$: Observable<Homepage>;
-  treatments$: Observable<Treatment[]>;
+  articles$: Observable<Article[]>;
   categories$: Observable<Category[]>;
+  selected: Date | null;
 
   constructor(private api: ApiService) { }
 
   ngOnInit() {
     this.homepage$ = this.api.getHomePage();
-    this.categories$ = this.api.getCategories();
-    this.categories$.subscribe(console.log);
+    this.articles$ = this.api.getArticles();
+    this.articles$.subscribe(console.log);
   }
 
   imageUrl(path: string) {

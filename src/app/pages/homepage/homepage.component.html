@@ -138,16 +138,20 @@
     <img class="homepage-banner" [src]="imageUrl(homepage.images[0].url)" />
   </div>
   <div class="page-content">
-    <div class="teasers" *ngIf="categories$ | async as categories">
+    <div class="teasers" *ngIf="articles$ | async as articles">
       <div class="body">
         <h1>{{ homepage.Title }}</h1>
         <p [innerHTML]="homepage.body | MarkdownToHtml"></p>
         <button class="cta" mat-flat-button color="accent" routerLink="/contact">Maak een afspraak</button>
       </div>
-      <app-treatment-teaser
-        *ngFor="let item of categories"
+      <app-article-teaser
+        *ngFor="let item of articles"
         [item]="item"
-      ></app-treatment-teaser>
+      ></app-article-teaser>
     </div>
   </div>
+  <mat-card class="card inline-calendar-card">
+    <mat-calendar (selectedChange)="selected = $event"></mat-calendar>
+  </mat-card>
+  <p>Selected date: {{selected}}</p>
 </ng-container>

@@ -1,14 +1,16 @@
-import { Treatment } from '../treatments/treatment';
+import { Article } from '../articles/article';
+import { EventItem } from '../events/event-item';
 
 export interface Category {
     created_at: string;
     name: string;
     published_at: string;
-    image: {
+    image?: {
         url: string;
     };
     updated_at: string;
-    treatments: Treatment[];
+    articles?: Article[];
+    events?: EventItem[];
     slug?: string;
     id: number;
 }
