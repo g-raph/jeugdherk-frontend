@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { SidebarService } from './sidebar.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AppComponent {
 
-  showMobileSidebar$ = new BehaviorSubject<boolean>(false);
+  constructor(private sidebarService: SidebarService) {
+  }
+
+  showMobileSidebar$ = this.sidebarService.showMobileSidebar$;
 
   openMobileSidebar() {
     this.showMobileSidebar$.next(true);

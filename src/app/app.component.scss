@@ -12,7 +12,7 @@ $sidebar-width: 15rem;
         justify-content: space-between;
         opacity: 1;
         transition: .25s all ease;
-        background: #fff;
+        background: #fbfcfa;
         box-shadow: 0 0 20px rgb(0 0 0 / 30%);
         z-index: 2;
         @media screen and (max-width: 600px) {
@@ -25,7 +25,7 @@ $sidebar-width: 15rem;
         }
     }
     .app-content {
-        background-color: #faf6ef;//#f7f7f7;
+        background-color: #fff;//#f7f7f7;
         min-height: 100vh;
         width: calc(100% - $sidebar-width);
         margin-left: $sidebar-width;

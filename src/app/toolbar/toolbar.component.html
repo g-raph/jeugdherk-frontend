@@ -4,7 +4,7 @@
 <div class="menu">
   <ul>
     <li *ngFor="let menuItem of menuItems">
-      <a [routerLink]="menuItem.link" routerLinkActive="active">{{menuItem.name}}</a>
+      <a [routerLink]="menuItem.link" routerLinkActive="active" (click)="closeMobileSidebar()">{{menuItem.name}}</a>
     </li>
   </ul>
 </div>

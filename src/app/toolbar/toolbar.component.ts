@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from '../sidebar.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -16,9 +17,13 @@ export class ToolbarComponent implements OnInit {
     {name: 'Contact', link: '/contact'},
   ];
 
-  constructor() { }
+  constructor(private sidebarService: SidebarService) { }
 
   ngOnInit() {
+  }
+
+  closeMobileSidebar() {
+    this.sidebarService.showMobileSidebar$.next(false);
   }
 
 }

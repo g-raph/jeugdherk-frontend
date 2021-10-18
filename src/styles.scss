@@ -39,19 +39,6 @@ a {
   }
 }
 
-.logo {
-  svg {
-    path {
-      &.valkenborgh {
-        fill: #231f20;
-      }
-      &.instituut {
-        fill: #016972;
-      }
-    }
-  }
-}
-
 .page-header {
   position: relative;
   display: flex;
