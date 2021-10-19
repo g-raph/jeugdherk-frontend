@@ -1,9 +1,9 @@
-<ng-container *ngIf="aboutpage$ | async as aboutpage">
+<ng-container *ngIf="(clubpage$ | async) as club">
     <div class="page-header">
-        <img [src]="imageUrl(aboutpage.images[0].url)">
+        <img [src]="imageUrl(club.images[0].url)">
     </div>
     <div class="page-content page-content--fixed">
-        <h1>{{aboutpage.title}}</h1>
-        <p>{{aboutpage.body}}</p>
+        <h1>{{club.title}}</h1>
+        <p>{{club.body}}</p>
     </div>
 </ng-container>

@@ -33,6 +33,7 @@ import { EventTeaserComponent } from './events/event-teaser/event-teaser.compone
 import { TeamDetailComponent } from './teams/team-detail/team-detail.component';
 import { TeamListComponent } from './teams/team-list/team-list.component';
 import { TeamTeaserComponent } from './teams/team-teaser/team-teaser.component';
+import { AboutpageComponent } from './pages/aboutpage/aboutpage.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { TeamTeaserComponent } from './teams/team-teaser/team-teaser.component';
     EventTeaserComponent,
     TeamDetailComponent,
     TeamListComponent,
-    TeamTeaserComponent
+    TeamTeaserComponent,
+    AboutpageComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

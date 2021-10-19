@@ -1,11 +1,15 @@
 export interface Team {
   title: string;
-  text: string;
+  text?: string;
   slug: string;
-  images: TeamImage[];
-  articles: TeamArticle[];
-  timeslots: TeamEvent[];
-  categories: TeamCategory[];
+  images?: TeamImage[];
+  articles?: TeamArticle[];
+  timeslots?: TeamEvent[];
+  categories?: TeamCategory[];
+  players?: string;
+  trainer?: string;
+  staff?: string;
+  competition?: string;
 }
 
 export interface TeamCategory {

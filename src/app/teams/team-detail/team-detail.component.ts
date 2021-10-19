@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ApiService } from 'src/app/api.service';
+import { environment } from 'src/environments/environment';
+import { Team } from '../team';
 
 @Component({
   selector: 'app-team-detail',
@@ -7,9 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamDetailComponent implements OnInit {
 
-  constructor() { }
+  page$: Observable<Team>;
+
+  constructor(private route: ActivatedRoute, private api: ApiService) { }
 
   ngOnInit() {
+    this.page$ = this.api.getTeam(this.route.snapshot.params.slug);
+  }
+
+  teamDetailImgUrl(path: string) {
+    return environment.apiUrl + path;
   }
 
 }

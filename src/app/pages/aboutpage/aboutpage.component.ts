@@ -12,12 +12,13 @@ import { Page } from '../page';
 })
 export class AboutpageComponent implements OnInit {
 
-  aboutpage$: Observable<Page>;
+  clubpage$: Observable<Page>;
 
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-    this.aboutpage$ = this.api.getAboutPage();
+    this.clubpage$ = this.api.getClubPage();
+    this.clubpage$.subscribe(console.log);
   }
 
   imageUrl(path: string) {

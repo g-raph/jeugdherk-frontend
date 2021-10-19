@@ -5,6 +5,7 @@ import { ArticleListComponent } from './articles/article-list/article-list.compo
 import { CategoryComponent } from './categories/category/category.component';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
 import { EventListComponent } from './events/event-list/event-list.component';
+import { AboutpageComponent } from './pages/aboutpage/aboutpage.component';
 import { ContactpageComponent } from './pages/contactpage/contactpage.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { TeamDetailComponent } from './teams/team-detail/team-detail.component';
@@ -13,6 +14,7 @@ import { TeamListComponent } from './teams/team-list/team-list.component';
 
 const routes: Routes = [
   {path: 'welkom', component: HomepageComponent},
+  {path: 'club', component: AboutpageComponent},
   {path: 'nieuws', component: ArticleListComponent},
   {path: 'nieuws/:slug', component: ArticleDetailComponent},
   {path: 'ploegen', component: TeamListComponent},
