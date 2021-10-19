@@ -29,6 +29,11 @@ export class ApiService {
     return this.http.get(url);
   }
 
+  getSponsors(): Observable<any> {
+    const url = `${environment.apiUrl}/sponsors`;
+    return this.http.get(url);
+  }
+
   getCategory(slug: string): Observable<any> {
     const url = `${environment.apiUrl}/categories/${slug}`;
     return this.http.get(url);
