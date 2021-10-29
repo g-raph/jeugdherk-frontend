@@ -1,10 +1,8 @@
 <ng-container *ngIf="events$ | async as events">
   <div class="page-content page-content--fixed">
-    <h1>Nieuws</h1>
-    <div class="treatment-list-per-category">
-      <div class="treatment-list-per-category__category">
-        <app-event-teaser *ngFor="let eventItem of events" [routerLink]="'/evenementen/' + eventItem.slug" [item]="eventItem"></app-event-teaser>
-      </div>
+    <h1>Evenementen</h1>
+    <div class="events-list">
+      <app-event-teaser *ngFor="let eventItem of events" [item]="eventItem"></app-event-teaser>
     </div>
   </div>
 </ng-container>

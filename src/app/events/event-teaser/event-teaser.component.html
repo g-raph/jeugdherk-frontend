@@ -1,12 +1,18 @@
-<div class="teaser-event">
-  <div class="body">
-    <h2 [routerLink]="'/evenementen/' + item.slug">{{ item.title }}</h2>
-    <div class="startdate">{{item.startdate | date: 'dd/MM/yyyy - HH:mm'}}u</div>
-    <div *ngIf="item.enddate" class="enddate">{{item.enddate | date: 'dd/MM/yyyy - HH:mm'}}u</div>
-    <ul>
-      <li *ngFor="let cat of item.categories">
-        <a [routerLink]="'/categorie/' + cat.slug">{{cat.name}}</a>
-      </li>
-    </ul>
+<div class="card teaser-event" [routerLink]="'/evenementen/' + item.slug">
+  <div class="card-body">
+    <img
+      class="main-image"
+      [src]="'http://localhost:1337' + item.images[0].url"
+    />
+    <div class="body">
+      <h2>{{ item.title }}</h2>
+      <div class="startdate">{{item.startdate | date: 'dd/MM/yyyy - HH:mm'}}u</div>
+      <div *ngIf="item.enddate" class="enddate">{{item.enddate | date: 'dd/MM/yyyy - HH:mm'}}u</div>
+      <ul>
+        <li *ngFor="let cat of item.categories">
+          <a [routerLink]="'/categorie/' + cat.slug">{{cat.name}}</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

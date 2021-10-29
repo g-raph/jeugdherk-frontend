@@ -5,9 +5,14 @@ export interface EventItem {
   startdate: string;
   enddate?: string;
   categories?: EventCategory[];
+  images?: EventImage[]; 
 }
 
 export interface EventCategory {
   name: string;
   slug: string;
+}
+
+export interface EventImage {
+  url: string;
 }
