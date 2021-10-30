@@ -1,12 +1,10 @@
 <ng-container *ngIf="contactpage$ | async as contactpage">
     <div class="page-header">
-        <img [src]="imageUrl(contactpage.images[0].url)">
+        <img [src]="contactpage.images[0].url">
     </div>
-    <button (click)="saveMessage()" type="submit">submit message</button>
     <div class="page-content page-content--fixed">
         <h1>{{contactpage.title}}</h1>
         <div class="page-content__info">
-            <div class="page-content__info__open" [innerHTML]="contactpage.open | MarkdownToHtml"></div>
             <div class="page-content__info__body" [innerHTML]="contactpage.body | MarkdownToHtml"></div>
         </div>
     </div>

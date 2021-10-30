@@ -21,10 +21,6 @@ export class ContactpageComponent implements OnInit, OnDestroy {
     this.contactpage$ = this.api.getContactPage();
   }
 
-  imageUrl(path: string) {
-    return environment.apiUrl + path;
-  }
-
   saveMessage() {
     const testMessage: Message = {
       sender_name: 'Gunter Gielen',

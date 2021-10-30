@@ -1,13 +1,13 @@
 <ng-container *ngIf="homepage$ | async as homepage">
   <div class="page-header" *ngIf="homepage.images">
-    <img class="homepage-banner" [src]="imageUrl(homepage.images[0].url)" />
+    <img class="homepage-banner" [src]="homepage.images[0].url" />
   </div>
   <div class="page-content">
     <div class="teasers" *ngIf="articles$ | async as articles">
       <div class="body">
         <h1>{{ homepage.Title }}</h1>
         <p [innerHTML]="homepage.body | MarkdownToHtml"></p>
-        <button class="cta" mat-flat-button color="accent" routerLink="/contact">Maak een afspraak</button>
+        <button class="cta" mat-flat-button color="accent" routerLink="/club">Maak kennis met onze club</button>
       </div>
       <app-article-teaser
         *ngFor="let item of articles"

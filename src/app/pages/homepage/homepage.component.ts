@@ -26,10 +26,6 @@ export class HomepageComponent implements OnInit {
     this.articles$.subscribe(console.log);
   }
 
-  imageUrl(path: string) {
-    return environment.apiUrl + path;
-  }
-
   catImageUrl(path: string) {
     return environment.apiUrl + path;
   }

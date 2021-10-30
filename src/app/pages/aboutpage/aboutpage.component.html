@@ -1,9 +1,12 @@
 <ng-container *ngIf="(clubpage$ | async) as club">
     <div class="page-header">
-        <img [src]="imageUrl(club.images[0].url)">
+        <img [src]="club.images[0].url">
     </div>
     <div class="page-content page-content--fixed">
         <h1>{{club.title}}</h1>
         <p>{{club.body}}</p>
+    </div>
+    <div class="infopage-teasers" *ngIf="infopages$ | async as infopages">
+        <app-infopage-teaser *ngFor="let infopage of infopages" [item]="infopage"></app-infopage-teaser>
     </div>
 </ng-container>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
+import { Infopage } from 'src/app/infopages/infopage';
 import { environment } from 'src/environments/environment';
 import { Homepage } from '../homepage/homepage';
 import { Page } from '../page';
@@ -13,16 +14,13 @@ import { Page } from '../page';
 export class AboutpageComponent implements OnInit {
 
   clubpage$: Observable<Page>;
+  infopages$: Observable<Infopage>;
 
   constructor(private api: ApiService) { }
 
   ngOnInit() {
     this.clubpage$ = this.api.getClubPage();
-    this.clubpage$.subscribe(console.log);
-  }
-
-  imageUrl(path: string) {
-    return environment.apiUrl + path;
+    this.infopages$ = this.api.getInfoPages();
   }
 
 }

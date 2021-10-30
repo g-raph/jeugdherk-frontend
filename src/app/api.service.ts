@@ -18,6 +18,11 @@ export class ApiService {
     const url = `${environment.apiUrl}/timeslots`;
     return this.http.get(url);
   }
+  
+  getInfoPages(): Observable<any> {
+    const url = `${environment.apiUrl}/infopages`;
+    return this.http.get(url);
+  }
 
   getCategories(): Observable<any> {
     const url = `${environment.apiUrl}/categories`;
@@ -56,6 +61,11 @@ export class ApiService {
 
   getTimeslot(slug: string): Observable<any> {
     const url = `${environment.apiUrl}/timeslots/${slug}`;
+    return this.http.get(url);
+  }
+  
+  getInfoPage(slug: string): Observable<any> {
+    const url = `${environment.apiUrl}/infopages/${slug}`;
     return this.http.get(url);
   }
 

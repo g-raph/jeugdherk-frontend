@@ -16,10 +16,6 @@ export class SponsorTeaserComponent implements OnInit {
   ngOnInit() {
   }
 
-  imageUrl(path: string) {
-    return environment.apiUrl + path;
-  }
-
   websiteUrl(path: string) {
     return environment.apiUrl + path;
   }
