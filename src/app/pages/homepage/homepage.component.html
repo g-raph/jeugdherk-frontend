@@ -3,16 +3,44 @@
     <img class="homepage-banner" [src]="homepage.images[0].url" />
   </div>
   <div class="page-content">
-    <div class="teasers" *ngIf="articles$ | async as articles">
-      <div class="body">
-        <h1>{{ homepage.Title }}</h1>
-        <p [innerHTML]="homepage.body | MarkdownToHtml"></p>
-        <button class="cta" mat-flat-button color="accent" routerLink="/club">Maak kennis met onze club</button>
+    <div class="body">
+      <h1>{{ homepage.Title }}</h1>
+      <p [innerHTML]="homepage.body | MarkdownToHtml"></p>
+      <button class="cta" mat-flat-button color="accent" routerLink="/club">Maak kennis met onze club</button>
+    </div>
+    <div class="teasers">
+      <div class="teaser-teams" *ngIf="teams$ | async as teams">
+        <h2>Onze ploegen</h2>
+        <app-team-teaser
+          *ngFor="let item of teams"
+          [item]="item"
+        ></app-team-teaser>
+        <a routerLink="/ploegen">Alle ploegen</a>
       </div>
-      <app-article-teaser
-        *ngFor="let item of articles"
-        [item]="item"
-      ></app-article-teaser>
+      <div class="teaser-events" *ngIf="events$ | async as events">
+        <h2>Volgende evenementen</h2>
+        <app-event-teaser
+          *ngFor="let item of events"
+          [item]="item"
+        ></app-event-teaser>
+        <a routerLink="/evenementen">Meer evenementen</a>
+      </div>
+      <div class="teaser-articles" *ngIf="articles$ | async as articles">
+        <h2>Recent nieuws</h2>
+        <app-article-teaser
+          *ngFor="let item of articles"
+          [item]="item"
+        ></app-article-teaser>
+        <a routerLink="/nieuws">Meer nieuws</a>
+      </div>
+      <div class="teaser-sponsors" *ngIf="sponsors$ | async as sponsors">
+        <h2>Onze sponsors</h2>
+        <app-sponsor-teaser
+          *ngFor="let item of sponsors"
+          [item]="item"
+        ></app-sponsor-teaser>
+        <a routerLink="/sponsors">Alle sponsors</a>
+      </div>
     </div>
   </div>
 </ng-container>
