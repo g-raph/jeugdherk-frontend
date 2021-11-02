@@ -15,7 +15,7 @@ export class ApiService {
   }
 
   getTimeslots(): Observable<any> {
-    const url = `${environment.apiUrl}/timeslots`;
+    const url = `${environment.apiUrl}/timeslots?_sort=startdate:ASC`;
     return this.http.get(url);
   }
   

@@ -25,7 +25,7 @@ $sidebar-width: 15rem;
         }
     }
     .app-content {
-        background-color: #f1f1f1;//#f7f7f7;
+        background-color: #eee;//#f7f7f7;
         min-height: 100vh;
         width: calc(100% - $sidebar-width);
         margin-left: $sidebar-width;

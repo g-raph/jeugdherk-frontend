@@ -5,3 +5,15 @@
 .mat-calendar-body-today {
   border-color: red;
 }
+
+// events
+.teaser-events {
+  &__content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    > * {
+      width: 32%;
+    }
+  }
+}

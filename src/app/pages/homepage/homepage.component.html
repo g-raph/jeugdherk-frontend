@@ -9,7 +9,7 @@
       <button class="cta" mat-flat-button color="accent" routerLink="/club">Maak kennis met onze club</button>
     </div>
     <div class="teasers">
-      <div class="teaser-teams" *ngIf="teams$ | async as teams">
+      <div class="teaser-block teaser-teams" *ngIf="teams$ | async as teams">
         <h2>Onze ploegen</h2>
         <app-team-teaser
           *ngFor="let item of teams"
@@ -17,15 +17,17 @@
         ></app-team-teaser>
         <a routerLink="/ploegen">Alle ploegen</a>
       </div>
-      <div class="teaser-events" *ngIf="events$ | async as events">
-        <h2>Volgende evenementen</h2>
-        <app-event-teaser
-          *ngFor="let item of events"
-          [item]="item"
-        ></app-event-teaser>
-        <a routerLink="/evenementen">Meer evenementen</a>
+      <div class="teaser-block teaser-events" *ngIf="events$ | async as events">
+        <h2 class="teaser-events__title">Volgende evenementen</h2>
+        <div class="teaser-events__content">
+          <app-event-teaser
+            *ngFor="let item of events"
+            [item]="item"
+          ></app-event-teaser>
+        </div>
+        <a class="teaser-events__link" routerLink="/evenementen">Meer evenementen</a>
       </div>
-      <div class="teaser-articles" *ngIf="articles$ | async as articles">
+      <div class="teaser-block teaser-articles" *ngIf="articles$ | async as articles">
         <h2>Recent nieuws</h2>
         <app-article-teaser
           *ngFor="let item of articles"
@@ -33,7 +35,7 @@
         ></app-article-teaser>
         <a routerLink="/nieuws">Meer nieuws</a>
       </div>
-      <div class="teaser-sponsors" *ngIf="sponsors$ | async as sponsors">
+      <div class="teaser-block teaser-sponsors" *ngIf="sponsors$ | async as sponsors">
         <h2>Onze sponsors</h2>
         <app-sponsor-teaser
           *ngFor="let item of sponsors"
