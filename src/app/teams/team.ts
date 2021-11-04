@@ -29,4 +29,9 @@ export interface TeamEvent {
 
 export interface TeamImage {
   url: string;
+  formats: {
+    thumbnail: {
+      url: string;
+    }
+  }
 }

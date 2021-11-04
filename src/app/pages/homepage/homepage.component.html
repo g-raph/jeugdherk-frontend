@@ -1,20 +1,28 @@
-<ng-container *ngIf="homepage$ | async as homepage">
+<ng-container *ngIf="homepage$ | async as homepage; else loader">
   <div class="page-header" *ngIf="homepage.images">
     <img class="homepage-banner" [src]="homepage.images[0].url" />
   </div>
   <div class="page-content">
     <div class="body">
-      <h1>{{ homepage.Title }}</h1>
-      <p [innerHTML]="homepage.body | MarkdownToHtml"></p>
-      <button class="cta" mat-flat-button color="accent" routerLink="/club">Maak kennis met onze club</button>
+      <div class="body__main">
+        <h1>{{ homepage.Title }}</h1>
+        <p [innerHTML]="homepage.body | MarkdownToHtml"></p>
+        <button mat-button color="accent" routerLink="/club">Maak kennis met onze club</button>
+      </div>
+      <div class="body__infoblock" *ngIf="infoBlock$ | async as infoblock">
+        <h2>{{infoblock.title}}</h2>
+        <p [innerHTML]="infoblock.text | MarkdownToHtml"></p>
+      </div>
     </div>
     <div class="teasers">
       <div class="teaser-block teaser-teams" *ngIf="teams$ | async as teams">
-        <h2>Onze ploegen</h2>
-        <app-team-teaser
+        <h2 class="teaser-teams__title">Onze ploegen</h2>
+        <div class="teaser-teams__content">
+          <app-team-teaser
           *ngFor="let item of teams"
           [item]="item"
-        ></app-team-teaser>
+          ></app-team-teaser>
+        </div>
         <a routerLink="/ploegen">Alle ploegen</a>
       </div>
       <div class="teaser-block teaser-events" *ngIf="events$ | async as events">
@@ -29,10 +37,12 @@
       </div>
       <div class="teaser-block teaser-articles" *ngIf="articles$ | async as articles">
         <h2>Recent nieuws</h2>
-        <app-article-teaser
-          *ngFor="let item of articles"
-          [item]="item"
-        ></app-article-teaser>
+        <div class="teaser-articles__content">
+          <app-article-teaser
+            *ngFor="let item of articles | slice:0:2"
+            [item]="item"
+          ></app-article-teaser>
+        </div>
         <a routerLink="/nieuws">Meer nieuws</a>
       </div>
       <div class="teaser-block teaser-sponsors" *ngIf="sponsors$ | async as sponsors">
@@ -46,3 +56,6 @@
     </div>
   </div>
 </ng-container>
+<ng-template #loader>
+  laden...
+</ng-template>

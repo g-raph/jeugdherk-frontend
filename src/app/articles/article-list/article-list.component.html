@@ -1,10 +1,8 @@
 <ng-container *ngIf="articles$ | async as articles">
   <div class="page-content page-content--fixed">
     <h1>Nieuws</h1>
-    <div class="treatment-list-per-category">
-      <div class="treatment-list-per-category__category">
-        <app-article-teaser *ngFor="let article of articles" [routerLink]="'/nieuws/' + article.Slug" [item]="article"></app-article-teaser>
-      </div>
+    <div class="article-list">
+      <app-article-teaser *ngFor="let article of articles" [routerLink]="'/nieuws/' + article.Slug" [item]="article"></app-article-teaser>
     </div>
   </div>
 </ng-container>

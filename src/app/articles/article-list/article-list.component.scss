@@ -1,0 +1,9 @@
+.article-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  > * {
+    width: calc(50% - 1rem);
+    margin-bottom: 1rem;
+  }
+}

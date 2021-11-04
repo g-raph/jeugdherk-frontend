@@ -1,6 +1,6 @@
 <ng-container *ngIf="page$ | async as page">
   <div class="page-header">
-      <img [src]="articleDetailImgUrl(page.Images[0].url)">
+      <img [src]="page.Images[0].url">
   </div>
   <div class="page-content page-content--fixed">
       <div class="treatment__detail__title">

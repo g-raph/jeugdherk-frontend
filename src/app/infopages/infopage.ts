@@ -5,4 +5,8 @@ export interface Infopage {
         url: string;
     }];
     slug: string;
+    downloadfiles?: [{
+        name?: string;
+        url?: string;
+    }]
 }

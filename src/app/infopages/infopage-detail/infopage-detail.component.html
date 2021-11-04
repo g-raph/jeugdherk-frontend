@@ -7,6 +7,10 @@
           <h1>{{page.title}}</h1>
         </div>
         <p [innerHTML]="page.text|MarkdownToHtml"></p>
+        <div class="downloads" *ngIf="page.downloadfiles">
+          <div class="download" *ngFor="let download of page.downloadfiles">
+            <a [href]="download.url"><span class="material-icons">download</span> {{download.name}}</a>
+          </div>
+        </div>
     </div>
   </ng-container>
-  

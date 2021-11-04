@@ -1,15 +1,9 @@
-<div class="teaser">
+<div class="teaser-team card" [routerLink]="'/ploegen/' + item.slug">
   <img
     class="main-image"
-    [src]="'http://localhost:1337' + item.images[0].url"
-    [routerLink]="'/ploegen/' + item.slug"
+    [src]="item.images[0].formats.thumbnail.url"
   />
   <div class="body">
-    <h2 [routerLink]="'/ploegen/' + item.slug">{{ item.title }}</h2>
-    <ul>
-      <li *ngFor="let cat of item.categories">
-        <a [routerLink]="'/categorie/' + cat.slug">{{cat.name}}</a>
-      </li>
-    </ul>
+    <h3>{{ item.title }}</h3>
   </div>
 </div>

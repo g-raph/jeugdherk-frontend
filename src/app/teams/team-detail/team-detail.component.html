@@ -1,22 +1,19 @@
 <ng-container *ngIf="page$ | async as page">
-  <div class="page-header">
-      <img [src]="teamDetailImgUrl(page.images[0].url)">
-  </div>
   <div class="page-content page-content--fixed">
-      <div class="treatment__detail__title">
-        <h1>{{page.title}}</h1>
-        <div class="treatment__detail__title__meta">
-          <div class="treatment__detail__title__meta__staff">
-            <div *ngIf="page.competition">Competitie: {{page.competition}}</div>
-            <div *ngIf="page.trainer">Trainer: {{page.trainer}}</div>
-            <div *ngIf="page.staff">Staff: {{page.staff}}</div>
-            <div *ngIf="page.players">Spelers: <p [innerHTML]="page.players|MarkdownToHtml">{{page.players}}</p></div>
-          </div>
-          <div class="treatment__detail__title__meta__categories">
-            <a *ngFor="let item of page.categories" [routerLink]="'/categorie/' + item.slug" class="treatment__detail__title__meta__categories__item">{{item.name}}</a>
-          </div>
+    <img class="top-pic" [src]="page.images[0].url">
+    <div class="treatment__detail__title">
+      <h1>{{page.title}}</h1>
+      <div class="treatment__detail__title__meta">
+        <div class="treatment__detail__title__meta__staff">
+          <div *ngIf="page.competition">Competitie: {{page.competition}}</div>
+          <div *ngIf="page.trainer">Trainer: {{page.trainer}}</div>
+          <div *ngIf="page.staff">Staff: {{page.staff}}</div>
+          <p [innerHTML]="page.text|MarkdownToHtml"></p>
+        </div>
+        <div class="treatment__detail__title__meta__players">
+          <div *ngIf="page.players">Spelers: <br><p [innerHTML]="page.players|MarkdownToHtml">{{page.players}}</p></div>
         </div>
       </div>
-      <p [innerHTML]="page.text|MarkdownToHtml"></p>
+    </div>
   </div>
 </ng-container>

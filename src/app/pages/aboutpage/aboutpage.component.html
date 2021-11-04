@@ -3,10 +3,14 @@
         <img [src]="club.images[0].url">
     </div>
     <div class="page-content page-content--fixed">
-        <h1>{{club.title}}</h1>
-        <p>{{club.body}}</p>
+        <div class="page-content__main">
+          <h1>{{club.title}}</h1>
+          <p>{{club.body}}</p>
+        </div>
+        <div class="page-content__bottom infopage-teasers" *ngIf="infopages$ | async as infopages">
+          <h3>Meer info</h3>
+          <app-infopage-teaser *ngFor="let infopage of infopages" [item]="infopage"></app-infopage-teaser>
+      </div>
     </div>
-    <div class="infopage-teasers" *ngIf="infopages$ | async as infopages">
-        <app-infopage-teaser *ngFor="let infopage of infopages" [item]="infopage"></app-infopage-teaser>
-    </div>
+
 </ng-container>

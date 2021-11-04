@@ -28,6 +28,11 @@ h3 {
 img {
   max-width: 100%;
   height: auto;
+  &.top-pic {
+    border: 1rem solid #fff;
+    box-shadow: 0 0 1rem rgb(0 0 0 / 15%);
+    width: calc(100% - 2rem);
+  }
 }
 
 a {
@@ -85,8 +90,11 @@ a {
 .card {
   background-color: #fff;
   padding: 1rem;
-  max-width: 25rem;
+  // max-width: 25rem;
   border-radius: .25rem;
+  h2, h3 {
+    margin: 0;
+  }
 }
 
 .teaser-block {

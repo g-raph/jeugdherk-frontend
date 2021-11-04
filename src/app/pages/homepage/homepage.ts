@@ -11,3 +11,8 @@ export interface Homepage {
 export interface HomepageImage {
     url: string;
 }
+
+export interface InfoBlock {
+    title: string;
+    text: string;
+}

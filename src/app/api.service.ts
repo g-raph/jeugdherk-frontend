@@ -18,7 +18,7 @@ export class ApiService {
     const url = `${environment.apiUrl}/timeslots?_sort=startdate:ASC`;
     return this.http.get(url);
   }
-  
+
   getInfoPages(): Observable<any> {
     const url = `${environment.apiUrl}/infopages`;
     return this.http.get(url);
@@ -63,7 +63,7 @@ export class ApiService {
     const url = `${environment.apiUrl}/timeslots/${slug}`;
     return this.http.get(url);
   }
-  
+
   getInfoPage(slug: string): Observable<any> {
     const url = `${environment.apiUrl}/infopages/${slug}`;
     return this.http.get(url);
@@ -76,6 +76,11 @@ export class ApiService {
 
   getHomePage(): Observable<any> {
     const url = `${environment.apiUrl}/homepage`;
+    return this.http.get(url);
+  }
+
+  getInfoblock(): Observable<any> {
+    const url = `${environment.apiUrl}/infoblock`;
     return this.http.get(url);
   }
 
