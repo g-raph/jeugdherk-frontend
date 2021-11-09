@@ -1,0 +1,9 @@
+.team-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  > * {
+    width: calc(33% - 1rem);
+    margin-bottom: 1.5rem;
+  }
+}

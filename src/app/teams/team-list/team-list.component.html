@@ -1,10 +1,8 @@
 <ng-container *ngIf="teams$ | async as teams">
   <div class="page-content page-content--fixed">
     <h1>Ploegen</h1>
-    <div class="team-list-per-category">
-      <div class="team-list-per-category__category">
-        <app-team-teaser *ngFor="let team of teams" [routerLink]="'/ploegen/' + team.slug" [item]="team"></app-team-teaser>
-      </div>
+    <div class="team-list">
+      <app-team-teaser *ngFor="let team of teams" [routerLink]="'/ploegen/' + team.slug" [item]="team"></app-team-teaser>
     </div>
   </div>
 </ng-container>
