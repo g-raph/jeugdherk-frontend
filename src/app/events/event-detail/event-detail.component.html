@@ -1,17 +1,17 @@
 <ng-container *ngIf="page$ | async as page">
   <div class="page-content page-content--fixed">
     <img
-      class="main-image top-pic"
+      class="top-pic"
       [src]="page.images[0].url"
     />
-    <div class="treatment__detail__title">
-      <h1>{{page.title}}</h1>
-      <div class="treatment__detail__title__meta">
-        <div class="treatment__detail__title__meta__categories">
-          <a *ngFor="let item of page.categories" [routerLink]="'/categorie/' + item.slug" class="treatment__detail__title__meta__categories__item">{{item.name}}</a>
-        </div>
-      </div>
+    <div class="event__detail">
+     <div class="left">
+      <div class="startdate">{{page.startdate | date: 'dd MMM yyyy'}}</div>
     </div>
-    <p [innerHTML]="page.text|MarkdownToHtml"></p>
+    <div class="right">
+      <h1>{{page.title}}</h1>
+      <p [innerHTML]="page.text"></p>
+     </div>
+    </div>
   </div>
 </ng-container>

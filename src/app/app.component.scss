@@ -23,6 +23,11 @@ $sidebar-width: 15rem;
           width: $sidebar-width;
           opacity: 1;
         }
+        &__social {
+          padding: 1.5rem 2rem;
+          position: relative;
+          z-index: 5;
+        }
     }
     .app-content {
         background-color: #eee;//#f7f7f7;

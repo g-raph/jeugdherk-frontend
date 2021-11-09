@@ -1,0 +1,36 @@
+.event__detail {
+  display: flex;
+  .left {
+    .startdate {
+      white-space: nowrap;
+      background: orangered;
+      padding: .25rem .5rem;
+      color: #fff;
+      position: relative;
+      margin-top: 1.5rem;
+      &:before {
+        content: '';
+        position: absolute;
+        border: 0.5rem solid transparent;
+        border-left-color: orangered;
+        left: 100%;
+        top: calc(50% - 0.5rem);
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: orangered;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        left: calc(100% + 1.5rem);
+        top: calc(50% - 0.5rem);
+      }
+    }
+  }
+  .right {
+    padding-left: 2rem;
+    margin-left: 2rem;
+    border-left: 1px solid #bbb;
+  }
+}

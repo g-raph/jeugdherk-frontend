@@ -1,11 +1,13 @@
 <ng-container *ngIf="contactpage$ | async as contactpage">
     <div class="page-header">
-        <img [src]="contactpage.images[0].url">
     </div>
     <div class="page-content page-content--fixed">
+      <iframe class="top-pic" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2513.565332865101!2d5.187902951602375!3d50.95025115900538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c13cf748e2813f%3A0x211f6550d5ae442d!2sManestraat%2082%2C%203540%20Herk-de-Stad!5e0!3m2!1snl!2sbe!4v1636460566591!5m2!1snl!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <div class="page-content__main">
         <h1>{{contactpage.title}}</h1>
         <div class="page-content__info">
-            <div class="page-content__info__body" [innerHTML]="contactpage.body | MarkdownToHtml"></div>
+            <div class="page-content__info__body" [innerHTML]="contactpage.body"></div>
         </div>
+      </div>
     </div>
 </ng-container>

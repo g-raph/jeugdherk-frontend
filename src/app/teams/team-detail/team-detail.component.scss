@@ -1,3 +1,10 @@
-.treatment__detail__title__meta {
-  display: flex;
+.team {
+  &__pic {
+    border: 1rem solid #fff;
+    box-shadow: 0 0 1rem rgb(0 0 0 / 15%);
+    width: 70%;
+  }
+  &__detail {
+    width: calc(30% - 4rem);
+  }
 }

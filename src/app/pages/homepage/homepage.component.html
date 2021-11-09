@@ -2,16 +2,16 @@
   <div class="page-header" *ngIf="homepage.images">
     <img class="homepage-banner" [src]="homepage.images[0].url" />
   </div>
-  <div class="page-content">
+  <div class="page-content page-content--fixed">
     <div class="body">
       <div class="body__main">
         <h1>{{ homepage.Title }}</h1>
-        <p [innerHTML]="homepage.body | MarkdownToHtml"></p>
-        <button mat-button color="accent" routerLink="/club">Maak kennis met onze club</button>
+        <p [innerHTML]="homepage.body"></p>
+        <button class="cta" routerLink="/club">Maak kennis met onze club</button>
       </div>
       <div class="body__infoblock" *ngIf="infoBlock$ | async as infoblock">
         <h2>{{infoblock.title}}</h2>
-        <p [innerHTML]="infoblock.text | MarkdownToHtml"></p>
+        <p [innerHTML]="infoblock.text"></p>
       </div>
     </div>
     <div class="teasers">
@@ -23,7 +23,7 @@
           [item]="item"
           ></app-team-teaser>
         </div>
-        <a routerLink="/ploegen">Alle ploegen</a>
+        <button class="cta" routerLink="/ploegen">Alle ploegen</button>
       </div>
       <div class="teaser-block teaser-events" *ngIf="events$ | async as events">
         <h2 class="teaser-events__title">Volgende evenementen</h2>
@@ -33,7 +33,7 @@
             [item]="item"
           ></app-event-teaser>
         </div>
-        <a class="teaser-events__link" routerLink="/evenementen">Meer evenementen</a>
+        <button class="cta teaser-events__link" routerLink="/evenementen">Meer evenementen</button>
       </div>
       <div class="teaser-block teaser-articles" *ngIf="articles$ | async as articles">
         <h2>Recent nieuws</h2>
@@ -43,7 +43,7 @@
             [item]="item"
           ></app-article-teaser>
         </div>
-        <a routerLink="/nieuws">Meer nieuws</a>
+        <button class="cta" routerLink="/nieuws">Meer nieuws</button>
       </div>
       <div class="teaser-block teaser-sponsors" *ngIf="sponsors$ | async as sponsors">
         <h2>Onze sponsors</h2>
@@ -51,11 +51,11 @@
           *ngFor="let item of sponsors"
           [item]="item"
         ></app-sponsor-teaser>
-        <a routerLink="/sponsors">Alle sponsors</a>
+        <button class="cta" routerLink="/sponsors">Alle sponsors</button>
       </div>
     </div>
   </div>
 </ng-container>
 <ng-template #loader>
-  laden...
+  <svg class="spinner" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.55 5.55L11 1v3.07C7.06 4.56 4 7.92 4 12s3.05 7.44 7 7.93v-2.02c-2.84-.48-5-2.94-5-5.91s2.16-5.43 5-5.91V10l4.55-4.45zM19.93 11c-.17-1.39-.72-2.73-1.62-3.89l-1.42 1.42c.54.75.88 1.6 1.02 2.47h2.02zM13 17.9v2.02c1.39-.17 2.74-.71 3.9-1.61l-1.44-1.44c-.75.54-1.59.89-2.46 1.03zm3.89-2.42l1.42 1.41c.9-1.16 1.45-2.5 1.62-3.89h-2.02c-.14.87-.48 1.72-1.02 2.48z"/></svg>
 </ng-template>

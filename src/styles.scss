@@ -25,14 +25,23 @@ h3 {
   color: $gold;
 }
 
+p {
+  line-height: 1.6;
+}
+
 img {
   max-width: 100%;
   height: auto;
-  &.top-pic {
-    border: 1rem solid #fff;
-    box-shadow: 0 0 1rem rgb(0 0 0 / 15%);
-    width: calc(100% - 2rem);
-  }
+}
+
+.top-pic {
+  border: 1rem solid #fff !important;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+  width: calc(100% - 2rem);
+  max-height: 30rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin-bottom: 2rem;
 }
 
 a {
@@ -42,6 +51,19 @@ a {
     color: #fff;
     background-color: $gold;
   }
+}
+
+button.cta {
+  border: 2px solid orangered;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+    background-color: orangered;
+  }
+
 }
 
 .page-header {
@@ -72,6 +94,10 @@ a {
   &--fixed {
     max-width: 60rem;
     margin: 0 auto;
+  }
+  &--split {
+    display: flex;
+    justify-content: space-between;
   }
 }
 

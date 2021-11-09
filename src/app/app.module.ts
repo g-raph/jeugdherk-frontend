@@ -21,7 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactpageComponent } from './pages/contactpage/contactpage.component';
 import { CategoryComponent } from './categories/category/category.component';
-import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 import { FooterComponent } from './footer/footer.component';
 import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
 import { ArticleListComponent } from './articles/article-list/article-list.component';
@@ -79,8 +78,7 @@ import { InfopageTeaserComponent } from './infopages/infopage-teaser/infopage-te
     MatCardModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule,
-    MarkdownToHtmlModule
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
