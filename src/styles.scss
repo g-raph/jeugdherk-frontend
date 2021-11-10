@@ -54,14 +54,14 @@ a {
 }
 
 button.cta {
-  border: 2px solid orangered;
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
-  border-radius: 0.25rem;
   cursor: pointer;
+  background-color: #016972;
+  color: #fff;
+  border: 0;
   &:hover {
-    color: #fff;
-    background-color: orangered;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.3);
   }
 
 }
