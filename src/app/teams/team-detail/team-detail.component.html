@@ -14,7 +14,7 @@
         <div markdown [data]="page.text"></div>
         <div class="treatment__detail__title__meta">
           <div class="treatment__detail__title__meta__players">
-            <div *ngIf="page.players">Spelers: <br><p [innerHTML]="page.players">{{page.players}}</p></div>
+            <div *ngIf="page.players">Spelers: <br><div markdown [data]="page.players">{{page.players}}</div></div>
           </div>
         </div>
       </div>

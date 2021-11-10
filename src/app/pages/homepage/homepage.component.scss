@@ -22,8 +22,20 @@
   }
 }
 
+.teaser-block {
+  .top {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #bbb;
+    margin-bottom: 1rem;
+  }
+}
+
 // teams
 .teaser-teams {
+  padding: 3rem 0;
   &__content {
     display: flex;
     flex-flow: row wrap;

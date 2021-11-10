@@ -6,7 +6,7 @@
     <div class="body">
       <div class="body__main">
         <h1>{{ homepage.Title }}</h1>
-        <p [innerHTML]="homepage.body"></p>
+        <div markdown [data]="homepage.body"></div>
         <button class="cta" routerLink="/club">Maak kennis met onze club</button>
       </div>
       <div class="body__infoblock" *ngIf="infoBlock$ | async as infoblock">
@@ -16,42 +16,51 @@
     </div>
     <div class="teasers">
       <div class="teaser-block teaser-teams" *ngIf="teams$ | async as teams">
-        <h2 class="teaser-teams__title">Onze ploegen</h2>
+        <div class="top">
+          <h2 class="teaser-teams__title">Onze ploegen</h2>
+          <button class="cta" routerLink="/ploegen">Alle ploegen</button>
+        </div>
         <div class="teaser-teams__content">
           <app-team-teaser
           *ngFor="let item of teams"
           [item]="item"
           ></app-team-teaser>
         </div>
-        <button class="cta" routerLink="/ploegen">Alle ploegen</button>
+
       </div>
       <div class="teaser-block teaser-events" *ngIf="events$ | async as events">
-        <h2 class="teaser-events__title">Volgende evenementen</h2>
+        <div class="top">
+          <h2 class="teaser-events__title">Volgende evenementen</h2>
+          <button class="cta teaser-events__link" routerLink="/evenementen">Meer evenementen</button>
+        </div>
         <div class="teaser-events__content">
           <app-event-teaser
             *ngFor="let item of events | slice:0:3"
             [item]="item"
           ></app-event-teaser>
         </div>
-        <button class="cta teaser-events__link" routerLink="/evenementen">Meer evenementen</button>
       </div>
       <div class="teaser-block teaser-articles" *ngIf="articles$ | async as articles">
-        <h2>Recent nieuws</h2>
+        <div class="top">
+          <h2>Recent nieuws</h2>
+          <button class="cta" routerLink="/nieuws">Meer nieuws</button>
+        </div>
         <div class="teaser-articles__content">
           <app-article-teaser
             *ngFor="let item of articles | slice:0:2"
             [item]="item"
           ></app-article-teaser>
         </div>
-        <button class="cta" routerLink="/nieuws">Meer nieuws</button>
       </div>
       <div class="teaser-block teaser-sponsors" *ngIf="sponsors$ | async as sponsors">
-        <h2>Onze sponsors</h2>
+        <div class="top">
+          <h2>Onze sponsors</h2>
+          <button class="cta" routerLink="/sponsors">Alle sponsors</button>
+        </div>
         <app-sponsor-teaser
           *ngFor="let item of sponsors"
           [item]="item"
         ></app-sponsor-teaser>
-        <button class="cta" routerLink="/sponsors">Alle sponsors</button>
       </div>
     </div>
   </div>
