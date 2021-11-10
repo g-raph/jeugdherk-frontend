@@ -37,6 +37,7 @@ import { SponsorTeaserComponent } from './sponsors/sponsor-teaser/sponsor-teaser
 import { SponsorListComponent } from './sponsors/sponsor-list/sponsor-list.component';
 import { InfopageDetailComponent } from './infopages/infopage-detail/infopage-detail.component';
 import { InfopageTeaserComponent } from './infopages/infopage-teaser/infopage-teaser.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { InfopageTeaserComponent } from './infopages/infopage-teaser/infopage-te
     MatCardModule,
     MatInputModule,
     MatDatepickerModule,
+    MarkdownModule.forRoot(),
     MatNativeDateModule
   ],
   providers: [],

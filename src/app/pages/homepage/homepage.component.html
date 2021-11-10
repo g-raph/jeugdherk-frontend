@@ -11,7 +11,7 @@
       </div>
       <div class="body__infoblock" *ngIf="infoBlock$ | async as infoblock">
         <h2>{{infoblock.title}}</h2>
-        <p [innerHTML]="infoblock.text"></p>
+        <div markdown [data]="infoblock.text"></div>
       </div>
     </div>
     <div class="teasers">
@@ -29,7 +29,7 @@
         <h2 class="teaser-events__title">Volgende evenementen</h2>
         <div class="teaser-events__content">
           <app-event-teaser
-            *ngFor="let item of events"
+            *ngFor="let item of events | slice:0:3"
             [item]="item"
           ></app-event-teaser>
         </div>

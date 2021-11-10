@@ -10,10 +10,14 @@
 .teaser-events {
   &__content {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
+    flex-flow: column nowrap;
+    position: relative;
+    margin-left: 10rem;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    border-left: 1px solid #bbb;
     > * {
-      width: 32%;
+      margin-bottom: 1rem;
     }
   }
 }

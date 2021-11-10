@@ -7,13 +7,10 @@
     />
     <div class="body">
       <h2>{{ item.title }}</h2>
-      <div class="startdate">{{item.startdate | date: 'dd/MM/yyyy - HH:mm'}}u</div>
-      <div *ngIf="item.enddate" class="enddate">{{item.enddate | date: 'dd/MM/yyyy - HH:mm'}}u</div>
-      <ul>
-        <li *ngFor="let cat of item.categories">
-          <a [routerLink]="'/categorie/' + cat.slug">{{cat.name}}</a>
-        </li>
-      </ul>
+      <div class="dates">
+        <div class="startdate">{{item.startdate | date: 'dd/MM/yyyy - HH:mm'}}u</div>
+      </div>
+      <div [innerHTML]="(item.text | slice:0:150) + '...'"></div>
     </div>
   </div>
 </div>

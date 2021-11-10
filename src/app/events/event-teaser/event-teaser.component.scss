@@ -35,9 +35,21 @@
   cursor: pointer;
   .card-body {
     display: flex;
+    align-items: flex-start;
     > img {
       width: 50%;
       margin-right: 1rem;
+    }
+    > .body {
+      .dates {
+        display: flex;
+        color: #888;
+        font-size: .75rem;
+        margin-bottom: 1rem;
+        .startdate {
+          margin-right: 1rem;
+        }
+      }
     }
   }
 }

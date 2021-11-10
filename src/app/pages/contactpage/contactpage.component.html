@@ -6,7 +6,7 @@
       <div class="page-content__main">
         <h1>{{contactpage.title}}</h1>
         <div class="page-content__info">
-            <div class="page-content__info__body" [innerHTML]="contactpage.body"></div>
+            <div class="page-content__info__body" markdown [data]="contactpage.body"></div>
         </div>
       </div>
     </div>

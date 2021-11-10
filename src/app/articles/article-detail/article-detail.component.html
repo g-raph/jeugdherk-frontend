@@ -4,7 +4,7 @@
       <img [src]="page.Images[0].url">
       <div class="article__detail__content">
         <h1>{{page.Title}}</h1>
-        <p [innerHTML]="page.Text"></p>
+        <div markdown [data]="page.Text"></div>
       </div>
     </div>
   </div>

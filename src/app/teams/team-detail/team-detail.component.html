@@ -7,11 +7,11 @@
           <div class="meta" *ngIf="page.competition"><div class="label">Competitie</div><br>{{page.competition}}</div>
           <div class="meta" *ngIf="page.trainer"><div class="label">Trainer</div><br>{{page.trainer}}</div>
           <div class="meta" *ngIf="page.staff"><div class="label">Afgevaardigde</div><br>{{page.staff}}</div>
-          <p [innerHTML]="page.text"></p>
         </div>
       </div>
       <div class="right">
         <h1>{{page.title}}</h1>
+        <div markdown [data]="page.text"></div>
         <div class="treatment__detail__title__meta">
           <div class="treatment__detail__title__meta__players">
             <div *ngIf="page.players">Spelers: <br><p [innerHTML]="page.players">{{page.players}}</p></div>
