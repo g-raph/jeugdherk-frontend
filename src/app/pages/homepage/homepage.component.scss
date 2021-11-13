@@ -104,10 +104,23 @@
     transform: rotate(360deg);
   }
 }
+.spinnerbox {
+  position: fixed;
+  left: 15rem;
+  top: 0;
+  width: calc(100% - 15rem);
+  height: 100%;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .spinner {
   -webkit-animation: rotating 2s linear infinite;
   -moz-animation: rotating 2s linear infinite;
   -ms-animation: rotating 2s linear infinite;
   -o-animation: rotating 2s linear infinite;
   animation: rotating 2s linear infinite;
+  width: 10rem;
+  height: auto;
 }
