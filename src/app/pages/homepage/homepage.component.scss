@@ -8,6 +8,7 @@
 
 // events
 .teaser-events {
+  padding: 3rem 0;
   &__content {
     display: flex;
     flex-flow: column nowrap;
@@ -49,6 +50,7 @@
 
 // articles
 .teaser-articles {
+  padding: 3rem 0;
   &__content {
     display: flex;
     flex-flow: row nowrap;
@@ -56,6 +58,21 @@
     > * {
       width: calc(50% - .5rem);
       margin-bottom: .25rem;
+    }
+  }
+}
+
+// sponsors
+.teaser-sponsors {
+  padding: 3rem 0;
+  &__content {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    > * {
+      width: calc(20% - 1rem);
+      margin-bottom: 2rem;
     }
   }
 }

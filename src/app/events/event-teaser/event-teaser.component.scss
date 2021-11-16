@@ -5,7 +5,7 @@
 .startdate-label {
   position: absolute;
   white-space: nowrap;
-  background: orangered;
+  background: #ee1c25;
   padding: .25rem .5rem;
   color: #fff;
   margin-top: 1.5rem;
@@ -15,14 +15,14 @@
     content: '';
     position: absolute;
     border: 0.5rem solid transparent;
-    border-left-color: orangered;
+    border-left-color: #ee1c25;
     left: 100%;
     top: calc(50% - 0.5rem);
   }
   &:after {
     content: '';
     position: absolute;
-    background-color: orangered;
+    background-color: #ee1c25;
     width: 1rem;
     height: 1rem;
     border-radius: 50%;

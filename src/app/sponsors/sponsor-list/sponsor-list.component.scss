@@ -1,0 +1,12 @@
+.sponsor-list {
+  &__items {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    > * {
+      width: calc(20% - 1rem);
+      margin-bottom: 2rem;
+    }
+  }
+}

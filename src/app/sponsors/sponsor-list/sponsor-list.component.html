@@ -1,8 +1,8 @@
 <ng-container *ngIf="sponsors$ | async as sponsors">
   <div class="page-content page-content--fixed">
     <h1>Wij worden gesponsord door:</h1>
-    <div class="treatment-list-per-category">
-      <div class="treatment-list-per-category__category">
+    <div class="sponsor-list">
+      <div class="sponsor-list__items">
         <app-sponsor-teaser *ngFor="let sponsor of sponsors" [item]="sponsor"></app-sponsor-teaser>
       </div>
     </div>

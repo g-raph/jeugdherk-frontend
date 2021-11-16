@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-$gold: #016972;
+$gold: #004753;
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
@@ -57,7 +57,7 @@ button.cta {
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   cursor: pointer;
-  background-color: #016972;
+  background-color: #004753;
   color: #fff;
   border: 0;
   &:hover {
@@ -110,7 +110,7 @@ button.cta {
 }
 
 .mat-calendar-body-active {
-  background-color: orangered;
+  background-color: #ee1c25;
 }
 
 .card {

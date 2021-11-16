@@ -55,12 +55,14 @@
       <div class="teaser-block teaser-sponsors" *ngIf="sponsors$ | async as sponsors">
         <div class="top">
           <h2>Onze sponsors</h2>
-          <button class="cta" routerLink="/sponsors">Alle sponsors</button>
+          <!-- <button class="cta" routerLink="/sponsors">Alle sponsors</button> -->
         </div>
-        <app-sponsor-teaser
-          *ngFor="let item of sponsors"
-          [item]="item"
-        ></app-sponsor-teaser>
+        <div class="teaser-sponsors__content">
+          <app-sponsor-teaser
+            *ngFor="let item of sponsors"
+            [item]="item"
+          ></app-sponsor-teaser>
+        </div>
       </div>
     </div>
   </div>
