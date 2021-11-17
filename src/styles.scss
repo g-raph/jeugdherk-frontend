@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-$gold: #004753;
+$gold: #222;
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
@@ -55,15 +55,17 @@ a {
 
 button.cta {
   padding: 0.5rem 0.75rem;
-  font-size: 1rem;
+  font-size: .75rem;
   cursor: pointer;
-  background-color: #004753;
+  background-color: $gold;
   color: #fff;
   border: 0;
   &:hover {
-    box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+    background-color: #333;
   }
-
+  &.big {
+    font-size: 1rem;
+  }
 }
 
 .page-header {
