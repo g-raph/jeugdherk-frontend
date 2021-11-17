@@ -19,7 +19,6 @@ export class ArticleListComponent implements OnInit {
 
   ngOnInit(): void {
     this.articles$ = this.api.getArticles();
-    this.articles$.subscribe(console.log);
   }
 
   catImageUrl(path: string) {
