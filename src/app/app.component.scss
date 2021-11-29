@@ -15,7 +15,7 @@ $sidebar-width: 15rem;
         background: #fbfcfa;
         box-shadow: 0 0 20px rgb(0 0 0 / 30%);
         z-index: 2;
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 1023px) {
           width: 0;
           opacity: 0;
         }
@@ -35,7 +35,7 @@ $sidebar-width: 15rem;
         width: calc(100% - $sidebar-width);
         margin-left: $sidebar-width;
         transition: .25s all ease;
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 1023px) {
           width: 100%;
           margin-left: 0;
         }
@@ -45,7 +45,7 @@ $sidebar-width: 15rem;
           top: 2rem;
           z-index: 99;
           display: none;
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 1023px) {
             display: block;
           }
         }
