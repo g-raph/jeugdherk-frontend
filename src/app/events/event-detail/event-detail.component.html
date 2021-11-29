@@ -1,4 +1,4 @@
-<ng-container *ngIf="page$ | async as page">
+<ng-container *ngIf="page$ | async as page; else loader">
   <div class="page-content page-content--fixed">
     <img
       class="top-pic"
@@ -15,3 +15,6 @@
     </div>
   </div>
 </ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

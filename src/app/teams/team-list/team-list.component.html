@@ -1,4 +1,4 @@
-<ng-container *ngIf="teams$ | async as teams">
+<ng-container *ngIf="teams$ | async as teams; else loader">
   <div class="page-content page-content--fixed">
     <h1>Ploegen</h1>
     <div class="team-list">
@@ -6,3 +6,6 @@
     </div>
   </div>
 </ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
-import { Category } from 'src/app/categories/category';
 import { environment } from 'src/environments/environment';
 import { Article } from '../article';
 

@@ -1,4 +1,4 @@
-<ng-container *ngIf="articles$ | async as articles">
+<ng-container *ngIf="articles$ | async as articles; else loader">
   <div class="page-content page-content--fixed">
     <h1>Nieuws</h1>
     <div class="article-list">
@@ -6,3 +6,6 @@
     </div>
   </div>
 </ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

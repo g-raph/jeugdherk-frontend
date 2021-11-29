@@ -1,4 +1,4 @@
-<ng-container *ngIf="sponsors$ | async as sponsors">
+<ng-container *ngIf="sponsors$ | async as sponsors; else loader">
   <div class="page-content page-content--fixed">
     <h1>Wij worden gesponsord door:</h1>
     <div class="sponsor-list">
@@ -8,3 +8,6 @@
     </div>
   </div>
 </ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

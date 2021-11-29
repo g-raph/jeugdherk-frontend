@@ -1,4 +1,4 @@
-<ng-container *ngIf="contactpage$ | async as contactpage">
+<ng-container *ngIf="contactpage$ | async as contactpage; else loader">
     <div class="page-header">
     </div>
     <div class="page-content page-content--fixed">
@@ -11,3 +11,6 @@
       </div>
     </div>
 </ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>
