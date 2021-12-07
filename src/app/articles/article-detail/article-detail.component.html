@@ -1,12 +1,17 @@
-<ng-container *ngIf="page$ | async as page">
+<ng-container *ngIf="page$ | async as page; else loader">
   <div class="page-content page-content--fixed">
     <img class="top-pic" [src]="page.Images[0].url">
     <div class="article__detail">
       <div class="article__detail__content">
-        <h1>{{page.Title}}</h1>
-        <div class="date">{{page.updated_at | date: 'dd/MM/yyyy'}}</div>
+        <div class="article__detail__content--top">
+          <h1>{{page.Title}}</h1>
+          <div class="date">{{page.updated_at | date: 'dd/MM/yyyy'}}</div>
+        </div>
         <div markdown [data]="page.Text"></div>
       </div>
     </div>
   </div>
 </ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

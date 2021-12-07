@@ -1,4 +1,4 @@
-<ng-container *ngIf="(clubpage$ | async) as club">
+<ng-container *ngIf="(clubpage$ | async) as club; else loader">
     <div class="page-content page-content--fixed">
       <img class="top-pic" [src]="club.images[0].url">
       <div class="page-content__main">
@@ -12,5 +12,7 @@
         </div>
       </div>
     </div>
-
 </ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

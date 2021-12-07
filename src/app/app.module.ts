@@ -20,7 +20,6 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactpageComponent } from './pages/contactpage/contactpage.component';
-import { CategoryComponent } from './categories/category/category.component';
 import { FooterComponent } from './footer/footer.component';
 import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
 import { ArticleListComponent } from './articles/article-list/article-list.component';
@@ -38,6 +37,7 @@ import { SponsorListComponent } from './sponsors/sponsor-list/sponsor-list.compo
 import { InfopageDetailComponent } from './infopages/infopage-detail/infopage-detail.component';
 import { InfopageTeaserComponent } from './infopages/infopage-teaser/infopage-teaser.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { PageLoaderComponent } from './page-loader/page-loader.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,6 @@ import { MarkdownModule } from 'ngx-markdown';
     PageComponent,
     HomepageComponent,
     ContactpageComponent,
-    CategoryComponent,
     FooterComponent,
     ArticleDetailComponent,
     ArticleListComponent,
@@ -61,7 +60,8 @@ import { MarkdownModule } from 'ngx-markdown';
     SponsorTeaserComponent,
     SponsorListComponent,
     InfopageDetailComponent,
-    InfopageTeaserComponent
+    InfopageTeaserComponent,
+    PageLoaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
