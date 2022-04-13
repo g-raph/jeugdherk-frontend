@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://desolate-dawn-33523.herokuapp.com'
+  apiUrl: 'https://jeugdherk-strapi.herokuapp.com'
 };
 
 /*
