@@ -1,44 +1,74 @@
 :host {
   position: relative;
+  @media screen and (max-width: 700px) {
+    text-align: center;
+  }
 }
 
 .startdate-label {
   position: absolute;
   white-space: nowrap;
-  background: #0db4b9;
+  background: #222;
   padding: .25rem .5rem;
   color: #fff;
   margin-top: 1.5rem;
   right: calc(100% + 4rem);
+  @media screen and (max-width: 700px) {
+    position: relative;
+    display: inline-block;
+    right: auto;
+    left: 0;
+    margin: 0 0 1rem;
+    align-self: center;
+  }
   cursor: pointer;
   &:before {
     content: '';
     position: absolute;
     border: 0.5rem solid transparent;
-    border-left-color: #0db4b9;
+    border-left-color: #222;
     left: 100%;
     top: calc(50% - 0.5rem);
+    @media screen and (max-width: 700px) {
+      border: 0.5rem solid transparent;
+      border-top-color: #222;
+      left: auto;
+      right: calc(50% - 0.5rem);
+      top: 100%;
+    }
   }
   &:after {
     content: '';
     position: absolute;
-    background-color: #0db4b9;
+    background-color: #222;
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
     left: calc(100% + 1.5rem);
     top: calc(50% - 0.5rem);
+    @media screen and (max-width: 700px) {
+      display: none;
+    }
   }
 }
 
 .teaser-event {
   cursor: pointer;
+  text-align: left;
   .card-body {
     display: flex;
     align-items: flex-start;
+    @media screen and (max-width: 700px) {
+      flex-flow: column nowrap;
+    }
     > img {
       width: 50%;
       margin-right: 1rem;
+      @media screen and (max-width: 700px) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: .5rem;
+      }
     }
     > .body {
       .dates {

@@ -1,15 +1,21 @@
 <ng-container *ngIf="page$ | async as page; else loader">
   <div class="page-content page-content--fixed">
     <img class="top-pic" [src]="page.images[0].url">
-      <div class="treatment__detail__title">
-        <h1>{{page.title}}</h1>
+    <div class="main">
+      <div class="left" *ngIf="infopages$ | async as infopages">
+        <h3>Nuttige informatie</h3>
+        <app-infopage-teaser *ngFor="let infopage of infopages" [item]="infopage"></app-infopage-teaser>
       </div>
-      <div markdown [data]="page.text"></div>
-      <div class="downloads" *ngIf="page.downloadfiles">
-        <div class="download" *ngFor="let download of page.downloadfiles">
-          <a [href]="download.url"><span class="material-icons">download</span> {{download.name}}</a>
+      <div class="right">
+        <h1>{{page.title}}</h1>
+        <div markdown [data]="page.text"></div>
+        <div class="downloads" *ngIf="page.downloadfiles">
+          <div class="download" *ngFor="let download of page.downloadfiles">
+            <a [href]="download.url"><span class="material-icons">download</span> {{download.name}}</a>
+          </div>
         </div>
       </div>
+    </div>
   </div>
 </ng-container>
 <ng-template #loader>

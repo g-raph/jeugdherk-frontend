@@ -46,10 +46,11 @@ img {
 
 a {
   color: $gold;
-  text-decoration: none;
+  text-decoration: underline;
   &:hover, &.active {
     color: #fff;
     background-color: $gold;
+    text-decoration: none;
   }
 }
 
@@ -112,11 +113,12 @@ button.cta {
 }
 
 .mat-calendar-body-active {
-  background-color: #0db4b9;
+  background-color: #222;
 }
 
 .card {
   background-color: #fff;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
   padding: 1rem;
   // max-width: 25rem;
   border-radius: .25rem;

@@ -3,7 +3,7 @@
       <img class="top-pic" [src]="club.images[0].url">
       <div class="page-content__main">
         <div class="left" *ngIf="infopages$ | async as infopages">
-          <h3>Meer info</h3>
+          <h3>Nuttige informatie</h3>
           <app-infopage-teaser *ngFor="let infopage of infopages" [item]="infopage"></app-infopage-teaser>
         </div>
         <div class="right">

@@ -1,8 +1,6 @@
 <ng-container *ngIf="homepage$ | async as homepage; else loader">
-  <div class="page-header" *ngIf="homepage.images">
-    <img class="homepage-banner" [src]="homepage.images[0].url" />
-  </div>
-  <div class="page-content page-content--fixed">
+  <div *ngIf="homepage.images" class="page-content page-content--fixed">
+    <img class="top-pic" [src]="homepage.images[0].url">
     <div class="body">
       <div class="body__main">
         <h1>{{ homepage.Title }}</h1>

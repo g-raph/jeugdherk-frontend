@@ -14,14 +14,16 @@ $sidebar-width: 15rem;
         transition: .25s all ease;
         background: #fbfcfa;
         box-shadow: 0 0 20px rgb(0 0 0 / 30%);
-        z-index: 2;
+        z-index: 5;
         @media screen and (max-width: 1023px) {
           width: 0;
           opacity: 0;
+          z-index: -1;
         }
         &.open {
           width: $sidebar-width;
           opacity: 1;
+          z-index: 5;
         }
         &__social {
           padding: 1.5rem 2rem;
@@ -30,23 +32,50 @@ $sidebar-width: 15rem;
         }
     }
     .app-content {
-        background-color: #eee;//#f7f7f7;
+        background-color: #fff;//#f7f7f7;
         min-height: 100vh;
         width: calc(100% - $sidebar-width);
         margin-left: $sidebar-width;
         transition: .25s all ease;
+        .mobile-header {
+          display: none;
+        }
         @media screen and (max-width: 1023px) {
           width: 100%;
           margin-left: 0;
-        }
-        .sidebar-button {
-          position: absolute;
-          right: 2rem;
-          top: 2rem;
-          z-index: 99;
-          display: none;
-          @media screen and (max-width: 1023px) {
-            display: block;
+          padding-top: 3rem;
+          .mobile-header {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: #fff;
+            width: calc(100% - 2rem);
+            position: fixed;
+            height: 2rem;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            .left > div {
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+              img {
+                width: 2rem;
+                margin-right: 1rem;
+              }
+            }
+            .right {
+              display: flex;
+              svg {
+                height: 1rem;
+                display: block;
+              }
+            }
+            a {
+              text-decoration: none;
+            }
           }
         }
     }

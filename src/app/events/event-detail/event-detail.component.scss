@@ -3,7 +3,7 @@
   .left {
     .startdate {
       white-space: nowrap;
-      background: #0db4b9;
+      background: #222;
       padding: .25rem .5rem;
       color: #fff;
       position: relative;
@@ -12,14 +12,14 @@
         content: '';
         position: absolute;
         border: 0.5rem solid transparent;
-        border-left-color: #0db4b9;
+        border-left-color: #222;
         left: 100%;
         top: calc(50% - 0.5rem);
       }
       &:after {
         content: '';
         position: absolute;
-        background-color: #0db4b9;
+        background-color: #222;
         width: 1rem;
         height: 1rem;
         border-radius: 50%;
@@ -32,5 +32,8 @@
     padding-left: 2rem;
     margin-left: 2rem;
     border-left: 1px solid #bbb;
+    .dates {
+      color: #888;
+    }
   }
 }

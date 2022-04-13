@@ -1,0 +1,18 @@
+.main {
+  display: flex;
+  .left {
+    margin-right: 2rem;
+    app-infopage-teaser {
+      display: block;
+      padding: 0.5rem;
+      border-top: 1px dashed #ddd;
+      &:last-child {
+        border-bottom: 1px dashed #ddd;
+      }
+    }
+  }
+  .right {
+    padding-left: 2rem;
+    border-left: 1px solid #ddd;
+  }
+}

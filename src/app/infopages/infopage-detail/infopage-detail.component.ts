@@ -12,11 +12,13 @@ import { Infopage } from '../infopage';
 export class InfopageDetailComponent implements OnInit {
 
   page$: Observable<Infopage>;
+  infopages$: Observable<Infopage>;
 
   constructor(private route: ActivatedRoute, private api: ApiService) { }
 
   ngOnInit() {
     this.page$ = this.api.getInfoPage(this.route.snapshot.params.slug);
+    this.infopages$ = this.api.getInfoPages();
   }
 
 }
