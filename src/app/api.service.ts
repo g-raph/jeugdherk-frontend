@@ -10,7 +10,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getArticles(): Observable<any> {
-    const url = `${environment.apiUrl}/articles`;
+    const url = `${environment.apiUrl}/articles?_sort=updated_at:DESC`;
     return this.http.get(url);
   }
 
