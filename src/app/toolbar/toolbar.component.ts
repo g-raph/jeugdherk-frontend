@@ -13,7 +13,7 @@ export class ToolbarComponent implements OnInit {
     {name: 'Welkom', link: '/welkom'},
     {name: 'Onze club', link: '/club/onze-visie'},
     // {name: 'Ploegen', link: '/ploegen'},
-    {name: 'Sponsors', link: '/sponsors'},
+    // {name: 'Sponsors', link: '/sponsors'},
     {name: 'Nieuws', link: '/nieuws'},
     {name: 'Evenementen', link: '/evenementen'},
     {name: 'Contact', link: '/contact'},

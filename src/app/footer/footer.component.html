@@ -1,5 +1,17 @@
 <div class="page-footer">
     <div class="page-footer__inner">
+      <div class="teaser-block teaser-sponsors" *ngIf="sponsors$ | async as sponsors">
+        <div class="top">
+          <h2>Onze sponsors</h2>
+          <!-- <button class="cta" routerLink="/sponsors">Alle sponsors</button> -->
+        </div>
+        <div class="teaser-sponsors__content">
+          <app-sponsor-teaser
+            *ngFor="let item of sponsors"
+            [item]="item"
+          ></app-sponsor-teaser>
+        </div>
+      </div>
         <div class="page-footer__inner--left">
             <p>
                 Jeugdvoetbal Groot Herk (JVGH)<br>

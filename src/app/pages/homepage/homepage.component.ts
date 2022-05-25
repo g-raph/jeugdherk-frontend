@@ -18,7 +18,6 @@ export class HomepageComponent implements OnInit, OnDestroy {
   homepage$: Observable<Homepage>;
   articles$: Observable<Article[]>;
   events$: Observable<EventItem[]>;
-  sponsors$: Observable<Sponsor[]>;
   teams$: Observable<Team[]>;
   infoBlock$: Observable<InfoBlock>;
   destroy$ = new Subject();
@@ -32,7 +31,6 @@ export class HomepageComponent implements OnInit, OnDestroy {
       takeUntil(this.destroy$),
       map(items => items.filter(item => new Date().setHours(0,0,0,0) <= new Date(item.startdate).setHours(0,0,0,0)))
     );
-    this.sponsors$ = this.api.getSponsors();
     this.teams$ = this.api.getTeams();
     this.infoBlock$ = this.api.getInfoblock();
   }

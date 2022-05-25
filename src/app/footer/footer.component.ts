@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ApiService } from '../api.service';
+import { Sponsor } from '../sponsors/sponsor';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  sponsors$: Observable<Sponsor[]>;
+
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.sponsors$ = this.api.getSponsors();
   }
 
 }
