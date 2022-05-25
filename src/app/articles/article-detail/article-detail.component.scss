@@ -11,6 +11,7 @@
       &--top {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
         .date {
           margin: 1.75rem 0;
           background: #222;

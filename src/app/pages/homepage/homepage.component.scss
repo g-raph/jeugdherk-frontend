@@ -6,9 +6,23 @@
   border-color: red;
 }
 
+.teaser-block {
+  .top {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #bbb;
+    margin-bottom: 1rem;
+  }
+}
+
 // events
 .teaser-events {
   padding: 3rem 0;
+  .top {
+    margin-bottom: 0;
+  }
   &__content {
     display: flex;
     flex-flow: column nowrap;
@@ -26,17 +40,6 @@
       padding-top: 1rem;
       border-left: 0;
     }
-  }
-}
-
-.teaser-block {
-  .top {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #bbb;
-    margin-bottom: 1rem;
   }
 }
 

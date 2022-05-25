@@ -77,6 +77,10 @@ $sidebar-width: 15rem;
             }
             .right {
               display: flex;
+              button {
+                background: none;
+                border: 0;
+              }
               svg {
                 height: 1rem;
                 display: block;
