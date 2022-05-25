@@ -1,5 +1,6 @@
 .event__detail {
   display: flex;
+  flex-flow: row nowrap;
   .left {
     .startdate {
       white-space: nowrap;
@@ -34,6 +35,32 @@
     border-left: 1px solid #bbb;
     .dates {
       color: #888;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    flex-flow: column nowrap;
+    .left {
+      text-align: center;
+      margin-bottom: 2rem;
+      .startdate {
+        text-align: center;
+        display: inline-block;
+        &:before {
+          border: 0.5rem solid transparent;
+          border-top-color: #222;
+          left: auto;
+          right: calc(50% - 0.5rem);
+          top: 100%;
+        }
+        &:after {
+          display: none;
+        }
+      }
+    }
+    .right {
+      padding-left: 0;
+    margin-left: 0;
+    border-left: 0;
     }
   }
 }
