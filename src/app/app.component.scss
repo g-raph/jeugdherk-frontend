@@ -29,6 +29,14 @@ $sidebar-width: 15rem;
           padding: 1.5rem 2rem;
           position: relative;
           z-index: 5;
+          a {
+            display: inline-block;
+            margin-right: 0.25rem;
+            &:hover {
+              background-color: transparent;
+              color: #444;
+            }
+          }
         }
     }
     .app-content {

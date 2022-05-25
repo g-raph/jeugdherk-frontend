@@ -84,11 +84,6 @@ export class ApiService {
     return this.http.get(url);
   }
 
-  getClubPage(): Observable<any> {
-    const url = `${environment.apiUrl}/club`;
-    return this.http.get(url);
-  }
-
   getAboutPage(): Observable<any> {
     const url = `${environment.apiUrl}/about-page`;
     return this.http.get(url);

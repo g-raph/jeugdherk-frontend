@@ -31,7 +31,6 @@ import { EventTeaserComponent } from './events/event-teaser/event-teaser.compone
 import { TeamDetailComponent } from './teams/team-detail/team-detail.component';
 import { TeamListComponent } from './teams/team-list/team-list.component';
 import { TeamTeaserComponent } from './teams/team-teaser/team-teaser.component';
-import { AboutpageComponent } from './pages/aboutpage/aboutpage.component';
 import { SponsorTeaserComponent } from './sponsors/sponsor-teaser/sponsor-teaser.component';
 import { SponsorListComponent } from './sponsors/sponsor-list/sponsor-list.component';
 import { InfopageDetailComponent } from './infopages/infopage-detail/infopage-detail.component';
@@ -56,7 +55,6 @@ import { PageLoaderComponent } from './page-loader/page-loader.component';
     TeamDetailComponent,
     TeamListComponent,
     TeamTeaserComponent,
-    AboutpageComponent,
     SponsorTeaserComponent,
     SponsorListComponent,
     InfopageDetailComponent,

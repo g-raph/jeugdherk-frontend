@@ -5,7 +5,7 @@
       <div class="body__main">
         <h1>{{ homepage.Title }}</h1>
         <div markdown [data]="homepage.body"></div>
-        <button class="cta big" routerLink="/club">Maak kennis met onze club</button>
+        <button class="cta big" routerLink="/club/onze-visie">Maak kennis met onze club</button>
       </div>
       <div class="body__infoblock" *ngIf="infoBlock$ | async as infoblock">
         <h2>{{infoblock.title}}</h2>
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="teasers">
-      <div class="teaser-block teaser-teams" *ngIf="teams$ | async as teams">
+      <!-- <div class="teaser-block teaser-teams" *ngIf="teams$ | async as teams">
         <div class="top">
           <h2 class="teaser-teams__title">Onze ploegen</h2>
           <button class="cta" routerLink="/ploegen">Alle ploegen</button>
@@ -24,8 +24,7 @@
           [item]="item"
           ></app-team-teaser>
         </div>
-
-      </div>
+      </div>-->
       <div class="teaser-block teaser-events" *ngIf="events$ | async as events">
         <div class="top">
           <h2 class="teaser-events__title">Volgende evenementen</h2>

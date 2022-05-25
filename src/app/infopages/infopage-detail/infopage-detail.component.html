@@ -2,9 +2,15 @@
   <div class="page-content page-content--fixed">
     <img class="top-pic" [src]="page.images[0].url">
     <div class="main">
-      <div class="left" *ngIf="infopages$ | async as infopages">
+      <div class="left">
         <h3>Nuttige informatie</h3>
-        <app-infopage-teaser *ngFor="let infopage of infopages" [item]="infopage"></app-infopage-teaser>
+        <div class="submenu">
+          <a [routerLink]="['/club/onze-visie']" [routerLinkActive]="'active'">Onze visie</a>
+          <a [routerLink]="['/club/het-bestuur']" [routerLinkActive]="'active'">Het bestuur</a>
+          <a [routerLink]="['/club/ongeval']" [routerLinkActive]="'active'">Ongeval?</a>
+          <a [routerLink]="['/club/prosoccerdata']" [routerLinkActive]="'active'">ProSoccerData</a>
+          <a [routerLink]="['/club/documenten']" [routerLinkActive]="'active'">Documenten</a>
+        </div>
       </div>
       <div class="right">
         <h1>{{page.title}}</h1>
