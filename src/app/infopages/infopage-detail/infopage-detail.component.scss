@@ -1,5 +1,6 @@
 .main {
   display: flex;
+  flex-flow: row nowrap;
   .left {
     margin-right: 2rem;
     min-width: 10rem;
@@ -15,5 +16,16 @@
   .right {
     padding-left: 2rem;
     border-left: 1px solid #ddd;
+  }
+  @media screen and (max-width: 700px) {
+    flex-flow: column nowrap;
+    .left {
+      margin-bottom: 2rem;
+      margin-right: 0;
+    }
+    .right {
+      padding-left: 0;
+      border-left: 0;
+    }
   }
 }
