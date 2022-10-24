@@ -1,6 +1,7 @@
 .team {
   &__detail {
     display: flex;
+    justify-content: center;
     .left {
       margin-top: 1.5rem;
     }
@@ -17,8 +18,27 @@
       display: inline-block;
     }
     .meta {
-      margin-bottom: .25rem;
-      white-space: nowrap;
+      margin-right: 2rem;
+      margin-bottom: 1rem;
+      &:last-child {
+        margin: 0;
+      }
     }
   }
+  &__info {
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: 700px) {
+      flex-flow: column nowrap;
+      text-align: center;
+    }
+  }
+}
+
+h2 {
+  text-align: center;
+}
+
+.top-pic {
+  margin-bottom: 0;
 }

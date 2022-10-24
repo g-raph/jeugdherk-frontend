@@ -3,19 +3,11 @@
     <img class="top-pic" [src]="page.images[0].url">
     <div class="team__detail">
       <div class="left">
-        <div class="treatment__detail__title__meta__staff">
+        <h2>JVGH - {{page.title}}</h2>
+        <div class="team__info">
           <div class="meta" *ngIf="page.competition"><div class="label">Competitie</div><br>{{page.competition}}</div>
           <div class="meta" *ngIf="page.trainer"><div class="label">Trainer</div><br>{{page.trainer}}</div>
           <div class="meta" *ngIf="page.staff"><div class="label">Afgevaardigde</div><br>{{page.staff}}</div>
-        </div>
-      </div>
-      <div class="right">
-        <h1>{{page.title}}</h1>
-        <div markdown [data]="page.text"></div>
-        <div class="treatment__detail__title__meta">
-          <div class="treatment__detail__title__meta__players">
-            <div *ngIf="page.players">Spelers: <br><div markdown [data]="page.players">{{page.players}}</div></div>
-          </div>
         </div>
       </div>
     </div>
