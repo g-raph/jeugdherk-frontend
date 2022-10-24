@@ -1,8 +1,11 @@
 <ng-container *ngIf="events$ | async as events; else loader">
   <div class="page-content page-content--fixed">
     <h1>Evenementen</h1>
-    <div class="events-list">
+    <div *ngIf="events.length > 0" class="events-list">
       <app-event-teaser *ngFor="let eventItem of events" [item]="eventItem"></app-event-teaser>
+    </div>
+    <div *ngIf="events.length === 0" class="empty-list">
+      Er zijn momenteel geen toekomstige evenementen.
     </div>
   </div>
 </ng-container>
