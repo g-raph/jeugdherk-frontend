@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, of, pipe, Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { ApiService, Message } from 'src/app/api.service';
-import { environment } from 'src/environments/environment';
+import { Meta, Title } from '@angular/platform-browser';
+import { Observable, Subscription } from 'rxjs';
+import { ApiService } from 'src/app/api.service';
 import { Page } from '../page';
 
 @Component({
@@ -13,36 +12,70 @@ import { Page } from '../page';
 export class ContactpageComponent implements OnInit, OnDestroy {
 
   contactpage$: Observable<Page>;
-  destroy$ = new Subject();
 
-  constructor(private api: ApiService) { }
+  metaSubscription: Subscription;
+
+  constructor(
+    private api: ApiService,
+    private title: Title,
+    private meta: Meta
+  ) { }
 
   ngOnInit() {
     this.contactpage$ = this.api.getContactPage();
-  }
 
-  saveMessage() {
-    const testMessage: Message = {
-      sender_name: 'Gunter Gielen',
-      sender_email: 'gunter.gielen@telenet.be',
-      message_body: 'bericht via frontend',
-      message_subject: 'bericht via frontend'
-    };
-    this.api.addMessage(testMessage).pipe(
-      takeUntil(this.destroy$)
-    ).subscribe({
-      next: (result) => {
-        console.log('result', result);
-      },
-      error: (err) => {
-        console.log('error', err);
-      }
+    this.metaSubscription = this.contactpage$.subscribe(data => {
+      this.title.setTitle(data.title);
+      const keywords = data.title.split(' ').join(',');
+      const description = data.body;
+
+      this.meta.updateTag({
+          'name': 'keywords',
+          'content': keywords
+        },
+        'name="keywords"'
+      );
+      this.meta.updateTag({
+          'name': 'description',
+          'content': description
+        }, 
+        'name="description"'
+      );
+      this.meta.updateTag({
+        'property': 'og:title',
+        'content': 'JVGH | ' + data.title
+      }, 
+      'property="og:title"'
+    );
+    this.meta.updateTag({
+        'property': 'og:description',
+        'content': data.body.slice(0, 50) + '...'
+      }, 
+      'property="og:description"'
+    );
+    this.meta.updateTag({
+        'property': 'og:image',
+        'content': "https://www.jeugdherk.be/assets/logo.png"
+      }, 
+      'property="og:image"'
+    );
+    this.meta.updateTag({
+        'property': 'og:type',
+        'content': 'website'
+      }, 
+      'property="og:type"'
+    );
+    this.meta.updateTag({
+        'property': 'og:url',
+        'content': window.location.href
+      }, 
+      'property="og:url"'
+    );
     });
   }
 
   ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
+    this.metaSubscription.unsubscribe();
   }
 
 }
