@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { ApiService } from '../api.service';
 import { Sponsor } from '../sponsors/sponsor';
 
@@ -11,11 +12,17 @@ import { Sponsor } from '../sponsors/sponsor';
 export class FooterComponent implements OnInit {
 
   sponsors$: Observable<Sponsor[]>;
+  bigSponsors$: Observable<Sponsor[]>;
 
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-    this.sponsors$ = this.api.getSponsors();
+    this.bigSponsors$ = this.api.getSponsors().pipe(
+      map(sponsors => sponsors.filter(sponsor => sponsor.sponsorship === 'big'))
+    );
+    this.sponsors$ = this.api.getSponsors().pipe(
+      map(sponsors => sponsors.filter(item => item.sponsorship !== 'big'))
+    );
   }
 
 }

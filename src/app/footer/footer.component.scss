@@ -24,19 +24,38 @@ $gold: #004753;
 .teaser-sponsors {
   padding: 3rem 0;
   &__content {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-    > * {
-      width: calc(15% - 0.5rem);
-      margin: 0 1rem 1rem;
-      text-align: center;
-      @media screen and (max-width: 1023px) {
+    &--big {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+      > * {
         width: calc(33% - 2rem);
+        margin: 0 1rem 1rem;
+        text-align: center;
+        @media screen and (max-width: 1023px) {
+          width: calc(50% - 2rem);
+        }
+        @media screen and (max-width: 700px) {
+          width: calc(100% - 2rem);
+        }
       }
-      @media screen and (max-width: 700px) {
-        width: calc(50% - 2rem);
+    }
+    &--medium {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+      > * {
+        width: calc(15% - 0.5rem);
+        margin: 0 1rem 1rem;
+        text-align: center;
+        @media screen and (max-width: 1023px) {
+          width: calc(25% - 2rem);
+        }
+        @media screen and (max-width: 700px) {
+          width: calc(33% - 2rem);
+        }
       }
     }
   }
