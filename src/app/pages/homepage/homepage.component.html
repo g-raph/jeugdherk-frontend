@@ -18,12 +18,17 @@
           <h2 class="teaser-teams__title">Onze ploegen</h2>
           <button class="cta" routerLink="/ploegen">Alle ploegen</button>
         </div>
-        <div class="teaser-teams__content">
+        <div class="teaser-teams__content" *ngIf="(teams$ | async)?.length; else emptyteams">
           <app-team-teaser
           *ngFor="let item of teams"
           [item]="item"
           ></app-team-teaser>
         </div>
+        <ng-template #emptyteams>
+          <div class="teaser-events__empty-content">
+            Er zijn momenteel geen ploegen...
+          </div>
+        </ng-template>
       </div>
       <div class="teaser-block teaser-events" *ngIf="events$ | async as events">
         <div class="top">
