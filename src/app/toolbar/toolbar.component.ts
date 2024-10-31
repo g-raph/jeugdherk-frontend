@@ -12,7 +12,7 @@ export class ToolbarComponent implements OnInit {
   menuItems = [
     {name: 'Welkom', link: '/welkom'},
     {name: 'Onze club', link: '/club/onze-visie'},
-    // {name: 'Ploegen', link: '/ploegen'},
+    {name: 'Ploegen', link: '/ploegen'},
     // {name: 'Sponsors', link: '/sponsors'},
     {name: 'Nieuws', link: '/nieuws'},
     {name: 'Evenementen', link: '/evenementen'},
