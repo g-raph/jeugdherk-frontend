@@ -10,7 +10,7 @@
       <div class="dates">
         <div class="startdate">{{item.startdate | date: 'dd/MM/yyyy - HH:mm'}}u</div>
       </div>
-      <div [innerHTML]="(item.text | slice:0:150) + '...'"></div>
+      <div *ngIf="item.text" [innerHTML]="(item.text | slice:0:150) + '...'"></div>
     </div>
   </div>
 </div>
