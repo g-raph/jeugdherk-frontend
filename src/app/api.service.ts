@@ -30,7 +30,7 @@ export class ApiService {
   }
 
   getTeams(): Observable<any> {
-    const url = `${environment.apiUrl}/teams?_sort=title:ASC`;
+    const url = `${environment.apiUrl}/teams?_sort=Slug:ASC`;
     return this.http.get(url);
   }
 
